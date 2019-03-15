@@ -1,0 +1,182 @@
+\documentclass{article}
+\title{Linear Algebra Worksheet 1}
+\author{Jonny Evans}
+\date{\vspace{-1cm}}
+\include{head}
+\begin{document}
+\maketitle
+\setcounter{section}{1}
+
+
+Here is a list \(\mathcal{V}\) of vectors
+\begin{align*}
+p&=\ma 1 \\ 0\mz& q&=\ma 0 \\ 1\mz & r&=\ma 1\\ 1\mz\\
+s&=\ma 1 \\ -2\mz& t&=\ma -1/2 \\ 7 \\ i\mz& u&=\ma 1 \\ 2 \\ 3\mz\\
+v&=\ma -1 \\ 0 \\ 3 \\ 0\mz& w&=\ma 1 \\ -2 \\ 0 \\ 0\mz &\xi&=\ma b\\ b\\ b\\ -b\mz
+\end{align*}
+Here is a list \(\mathcal{M}\) of matrices
+\begin{align*}
+A&=\ma 0 & 1 \\ 1 & 1\mz&B&=\ma 2 & 3 \\ 1 & 1\mz&C&=\ma 1 & 1 & 1\\ 1 & 0 & -2\mz\\
+D&=\ma 1 & 1 \\ -2 & 8 \\ 1/2 & 3\mz&E&=\ma -1 & 1 & 0\mz& F&=\ma 1 & 0 & 2 \\ 1 & -1 & 1 \\ 3 & 0 & 0\mz\\
+G&=\ma 1 & 3 & -1\\ 0 & 1 & 0 \\ 1 & 1 & 0\mz&H&=\ma 1 & 0 & -1 & 0 \\ -2 & 1 & 0 & 4 \\ -17 & 2 & 3 & 5 \\ 1 & -2 & 0 & 0\mz&J&=\ma 0 & 1 & -2 & 1 \\ 1 & 1 & 1 & 1 \mz
+\end{align*}
+
+
+\begin{Exercise}\label{exr:matvec}
+For each \(V\in\mathcal{V}\) and each \(M\in\mathcal{M}\), state
+whether the vector \(MV\) is defined and, if it is defined, compute
+it.
+
+
+\end{Exercise}
+\begin{Exercise}\label{exr:matmul}
+For \(N=\ma 1 & -1\\ 2 & 0 \\ 4 & -2\mz\) and for each
+\(M\in\mathcal{M}\) state whether \(NM\) and/or \(MN\) is defined
+and calculate any products which are defined.
+
+
+\end{Exercise}
+\begin{Exercise}\label{exr:exp}
+Find the exponentials of the following matrices (\(\lambda\) is just
+some number, \(i\) is the square root of \(-1\)): \[A=\ma 1 & 1 \\ 0
+& 0\mz,\quad B=\ma 0 & 1 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0\mz,\quad
+C=\ma \lambda & 0 \\ 0 & \lambda\mz,\quad D=\ma 0 & i \\ i & 0\mz.\]
+
+
+
+
+\end{Exercise}
+\newpage
+
+
+\begin{Exercise}\label{exr:cols}
+Show that if \[A=\ma A_{11} & \cdots & A_{1n} \\ \vdots & & \vdots
+\\ A_{m1} &\cdots & A_{mn}\mz\quad\mbox{and}\quad e_1=\ma 1 \\ 0
+\\ \vdots \\ 0\mz\] then \(Ae_1\) is the first column of
+\(A\). Which vectors \(e_2,\ldots,e_n\) will give the second,
+third,..., \(n\)th columns?
+
+
+\end{Exercise}
+\begin{Exercise}\label{exr:truefalse}
+Let \(X\) and \(Y\) denote \(2\)-by-\(2\) matrices. Are the
+following statements true or false? In each case, give a proof or a
+counterexample to support your claim.
+\begin{itemize}
+\item If \(X^2=I\) then \(X=\pm I\).
+\item If \(XY=0\) then \(X=0\) or \(Y=0\).
+\item If \(X\) has real entries then \(X^2\neq -I\).
+\item If \(Xe_1=Xe_2=0\) then \(X=0\) (\(e_1,e_2\) are from
+\cref{exr:cols}).
+
+
+\end{itemize}
+\end{Exercise}
+\begin{Exercise}\label{exr:fib}
+Take the vector \(\ma 1 \\ 1 \mz\) and the matrix \(A=\ma 0 & 1 \\ 1
+& 1 \mz\). Apply \(A\) to \(v\). Then apply \(A\) again. Then apply
+\(A\) again. Continue until you spot a pattern. Can you express the
+pattern as a formula? Can you prove that this pattern is going to
+continue? (Hint: You may write \(F_n\) for the \(n\)th term in a
+certain famous sequence of numbers).
+
+
+\end{Exercise}
+\begin{Exercise}\label{exr:ref}
+Check that the matrix \[H_\phi:=\ma \cos\phi & \sin\phi \\ \sin\phi
+& -\cos\phi\mz\] fixes the vector \(v=\ma \cos(\phi/2)
+\\ \sin(\phi/2)\mz\) and sends the vector \(w=\ma -\sin(\phi/2)
+\\ \cos(\phi/2)\mz\) to \(-w\). (Hint: Remember your trigonometric
+identities...)
+
+
+{\em This means that \(H_\phi\) represents a reflection in the line
+containing \(v\).}
+
+
+\end{Exercise}
+\begin{Exercise}[Special relativity velocity addition]\label{exr:lorentz}
+Given a number \(v\), define the matrix \(\Lambda(v)=\ma
+\frac{1}{\sqrt{1-v^2}} & \frac{-v}{\sqrt{1-v^2}}
+\\ \frac{-v}{\sqrt{1-v^2}} & \frac{1}{\sqrt{1-v^2}}\mz\). Check that
+\[\frac{1}{\sqrt{1-\left(\frac{u+v}{1+uv}\right)^2}}=\frac{1+uv}{\sqrt{(1-u^2)(1-v^2)}}\]
+for all \(u,v\). Deduce that
+\[\Lambda(u)\Lambda(v)=\Lambda\left(\frac{u+v}{1+uv}\right).\]
+
+
+\end{Exercise}
+%# Exercise exr:lorentzexp
+% In the notation of \cref{exr:lorentz}, find a matrix \(M(v)\) such
+% that \(\exp(M(v))=\Lambda(v)\). (Hint: Use Assessed
+% \cref{exr:exphyp}.)
+
+
+\newpage
+
+
+\section{Assessed questions for week 1}
+
+
+\setcounter{section}{1}
+
+
+\begin{Question}\label{exr:pq}
+Let \(A=\ma 1-pq & p^2 \\ -q^2 & 1+pq\mz\) and let \(v=\ma
+p\\ q\mz\). Find \(Av\). \mks{2}
+
+
+\end{Question}
+\begin{Question}\label{exr:nc}
+Let \(A=\ma 1 & 1 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1\mz\) and \(B=\ma 1 &
+0 & 0 \\ 0 & 1 & 1 \\ 0 & 0 & 1\mz\). Prove \(AB\neq BA\). \mks{4}
+
+
+\end{Question}
+\begin{Question}\label{exr:matmult}
+For each pair of matrices \(M,N\) from the list below, state whether
+the products \(MN\) and \(NM\) are well-defined and compute
+any\mks{6} which are well-defined. \[A=\ma 2 & 0 & 1 \\ 0 & 1 & 0
+\\ 1 & 0 & 2\mz,\quad B=\ma 1 & 1 & 1 \\ -1 & 0 & 3\mz,\quad C=\ma 1
+& 1 \\ 1 & 1 \\ 0 & 0\mz,\quad D=\ma 1 \\ 2 \\ 3 \\ 4\mz.\]
+
+
+\end{Question}
+\begin{Question}\label{exr:trace}
+Let \(n>0\). Define the {\em trace} \(\mathrm{Tr}(A)\) of an
+\(n\)-by-\(n\) matrix \(A\) to be the sum of its diagonal entries
+i.e. \(\mathrm{Tr}(A)=\sum_{i=1}^nA_{ii}\). Show that \mks{3}
+\(\mathrm{Tr}(AB)=\mathrm{Tr}(BA)\). (Hint: What are the \(ii\)
+entries of \(AB\) and of \(BA\)?) Find \(\mathrm{Tr}(I)\). Prove
+that there are no matrices \(A,B\) such that \(AB-BA=I\) (Hint: Take
+the trace of this formula!)
+
+
+\end{Question}
+\begin{Question}\label{exr:exphyp}
+Show that if \(X=\ma 0 & t \\ t & 0 \mz\) then \(\exp(X)=\ma \cosh t
+& \sinh t \\ \sinh t & \cosh t\mz\).\mks{4}
+
+
+{\em If you've never met them, \(\cosh\) and \(\sinh\) are the
+hyperbolic trigonometric functions defined by their Taylor series:}
+\[\cosh t=1+\frac{t^2}{2!}+\frac{t^4}{4!}+\cdots\qquad
+\sinh(t)=t+\frac{t^3}{3!}+\frac{t^5}{5!}+\cdots.\]
+
+
+\end{Question}
+\begin{Question}\label{exr:pell}
+The {\em Pell numbers} \(P_1=0\), \(P_2=1\), \(P_3=2\), \(P_4=5\),
+\(P_5=12\), \(P_6=29\), etc are obtained by the recursion\mks{1}
+\(P_{n+2}=P_n+2P_{n+1}\). Write down a \(2\)-by-\(2\) matrix \(A\)
+such that \(A\ma P_n \\ P_{n+1}\mz=\ma P_{n+1}
+\\ P_{n+2}\mz\). (Hint: Try \cref{exr:fib} first.)
+
+
+\end{Question}
+\rule{\textwidth}{0.4pt}
+
+
+\mks{Total/20}
+
+
+\end{document}
