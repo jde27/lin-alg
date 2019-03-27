@@ -1,0 +1,257 @@
+@ title Linear Algebra
+@ author Jonny Evans
+@ date MATH105
+@ include beamer-head
+
+# frame
+  \includegraphics[width=300px]{tree}
+
+# frame
+  \begin{center}
+  {\huge Matrices and vectors}
+  \end{center}
+
+# frame
+  A vector \(v=\ma x \\ y\mz\) in \(\RR^2\) represents an arrow:
+
+  \onslide<1->\tka
+  \onslide<1->{\draw[->,thick] (0,0) -- (3,2);
+  \draw[dotted] (0,0) -- (3,0) node [midway,below] {\(x\)};
+  \draw[dotted] (3,0) -- (3,2) node [midway,right] {\(y\)};}
+  \onslide<2->{\node at (1.5,1) [above left] {\(|v|\)};}
+  \onslide<4->{\node at (0.6,0.2) {\(\theta\)};
+  \draw (0.9,0) arc [radius=0.9,start angle=0,end angle=35];}
+  \tkz
+ 
+  \begin{columns}[t]
+  \begin{column}{.3\linewidth}<1->
+  \onslide<2->Length of \(v\)?
+  \vspace{0.4cm}
+
+  \onslide<4->Angle \(\theta\)?
+  \end{column}
+  \begin{column}{.3\linewidth}<1->
+  \onslide<3-> \(|v|=\sqrt{x^2+y^2}\)
+  \vspace{0.4cm}
+
+  \onslide<5-> \(\theta=\arctan(y/x)\)
+  \end{column}
+  \end{columns}
+  \vspace{0.2cm}
+
+  \onslide<6->\[v=\ma |v|\cos\theta \\ |v|\sin\theta\mz.\]
+
+# frame
+  \onslide<1->
+  # Theorem
+    If \(w\) is obtained by rotating \(v=\ma x \\ y\mz\) by an angle
+    \(\phi\) anticlockwise around its basepoint then
+    \[w=\ma x\cos\phi-y\sin\phi \\ x\sin\phi+y\cos\phi\mz.\]
+
+  \onslide<2->
+  # Definition
+    A {\em 2-by-2 matrix} is a grid of numbers \(\ma a & b \\ c &
+    d\mz\).
+
+    Given \(M=\ma a & b \\ c & d\mz\) and \(v=\ma x \\ y\mz\), define
+    the {\em linear map} \[\RR^2\to\RR^2,\qquad v\mapsto Mv:=\ma a & b
+    \\ c & d\mz\ma x \\ y\mz=\ma ax+by \\ cx+dy\mz.\]
+
+# frame
+  \onslide<1->
+  Similarly, a vector \(\ma x \\ y \\ z\mz\) represents an arrow in
+  \(\RR^3\).
+
+  \onslide<2->
+  A 3-by-3 matrix \(\ma a & b & c \\ d & e & f \\ g & h & i\mz\)
+  defines a linear map \(\RR^3\to\RR^3\),
+
+  \onslide<3->
+  \[\ma a & b & c \\ d & e & f \\ g & h & i\mz\ma x \\ y \\ z\mz=\ma ax+by+cz \\ dx+ey+fz \\ gx+hy+iz\mz.\]
+
+# frame
+  \onslide<1->
+  # Definition
+    An \(m\)-by-\(n\) matrix is a grid with \(m\) rows and \(n\)
+    columns
+    \tka
+    \node at (0,0) {\(\ma A_{11} & A_{12} & \cdots & \cdots & A_{1n} \\ A_{21} & A_{22} & \cdots & \cdots & A_{2n} \\ \vdots & \vdots &        &   & \vdots \\ A_{m1} & A_{m2} & \cdots & \cdots & A_{mn} \mz\)};
+    \draw[<->,thick] (-2,1.4) -- (2,1.4) node [midway,above] {\(n\)};
+    \draw[<->,thick] (-3,1) -- (-3,-1) node [midway,left] {\(m\)};
+    \tkz
+
+  \onslide<2-> This defines a linear map \(\RR^n\to\RR^m\) \[\ma
+  A_{11} & A_{12} & \cdots & \cdots & A_{1n} \\ A_{21} & A_{22} &
+  \cdots & \cdots & A_{2n} \\ \vdots & \vdots & & & \vdots
+  \\ A_{m1} & A_{m2} & \cdots & \cdots & A_{mn} \\ \mz\ma x_1
+  \\ x_2 \\ \vdots \\ \vdots \\ x_n\mz=\ma A_{11}x_1+\cdots+A_{1n}x_n
+  \\ A_{21}x_1+\cdots+A_{2n}x_n \\ \vdots
+  \\ A_{m1}x_1+\cdots+A_{mn}x_n \mz\]
+
+# frame
+  \begin{center}
+  {\huge Matrix multiplication}
+  \end{center}
+
+# frame
+  {Back to 2-by-2}
+
+  \onslide<1->Given \(A=\ma A_{11} & A_{12} \\ A_{21} & A_{22}\mz\), and \(B=\ma
+  B_{11} & B_{12} \\ B_{21} & B_{22}\mz\) we get
+  \onslide<1->\begin{align*}
+  \onslide<2->{A(B(v))&=\ma A_{11} & A_{12} \\ A_{21} & A_{22}\mz\ma B_{11} & B_{12} \\ B_{21} & B_{22}\mz\ma x \\ y\mz\\}
+  \onslide<3->{&\vdots\\}
+  \onslide<4->{&=\ma A_{11}B_{11}+A_{12}B_{21} & A_{11}B_{12}+A_{12}B_{22}\\ A_{21}B_{11}+A_{22}B_{21} & A_{21}B_{12}+A_{22}B_{22}\mz\ma x \\ y\mz}
+  \end{align*}
+  
+# frame
+  # Definition dfn:matmul2 Matrix multiplication: 2-by-2
+    Define \[AB=\ma A_{11}B_{11}+A_{12}B_{21} &
+    A_{11}B_{12}+A_{12}B_{22}\\ A_{21}B_{11}+A_{22}B_{21} &
+    A_{21}B_{12}+A_{22}B_{22}\mz.\]
+
+    \onslide<2-> Equivalently, \[(AB)_{ij}=\sum_{k=1}^2A_{ik}B_{kj}.\]
+
+    \onslide<3->
+    # Definition dfn:matmul Matrix multiplication
+      Given an \(m\)-by-\(n\) matrix \(A\) and an \(n\)-by-\(p\) matrix
+      \(B\), define \(AB\) to be the \(m\)-by-\(p\) matrix with entries
+      \[(AB)_{ij}=\sum_{k=1}^nA_{ik}B_{kj}.\]
+
+# frame
+  \onslide<1->
+  # Definition dfn:matrixpowers Matrix powers
+    If \(A\) is a square matrix and \(k\) is a positive integer then
+    \(A^k\) denotes the product \(AA\cdots A\) (\(k\) times, where
+    \(k=0\) means \(A=I\)).
+
+  \onslide<2->
+  # Definition dfn:matrixsum Matrix sum
+    \[(A+B)_{ij}=A_{ij}+B_{ij}.\]
+
+  \onslide<3->
+  # Definition dfn:matrixscaling Matrix scaling
+    \[(\lambda A)_{ij}=\lambda A_{ij}.\]
+
+# frame
+  {Matrix exponential}
+
+  \onslide<2->
+  # Definition dfn:matexp Matrix exponential
+    Given an \(n\)-by-\(n\) matrix \(A\), define
+    \[\exp(A)=I+A+\frac{1}{2!}A^2+\frac{1}{3!}A^3+\cdots=\sum_{n\geq 0}\frac{1}{n!}A^n.\]
+
+# frame
+  \begin{center}
+  {\huge Dot products \&\\ orthogonal matrices}
+  \end{center}
+
+# frame
+  \onslide<1->
+  # Definition
+    Given vectors \(v=\ma v_1 \\ \vdots \\ v_n\mz\) and \(w=\ma w_1
+    \\ \vdots \\ w_n\mz\) define the {\em dot product} \[v\cdot
+    w:=v_1w_1+\cdots+v_nw_n=\sum_{i=1}^nv_iw_i.\]
+
+  \onslide<2->
+  # Theorem thm:angle Proof later!
+    If \(v\) and \(w\) make an angle \(\phi\) then
+    \[v\cdot w=|v||w|\cos\phi.\]
+  
+# frame
+  \onslide<1->
+  Note that \[\ma v_1\\ \vdots\\v_n\mz\cdot\ma
+  w_1\\\vdots\\ w_n\mz=\ma v_1 & \cdots & v_n\mz\ma
+  w_1\\\vdots\\ w_n\mz.\]
+
+  \onslide<2->
+  # Definition
+    Define the {\em transpose} \(A^T\) of an \(m\)-by-\(n\) matrix
+    \(A\) to be the \(n\)-by-\(m\) matrix with entries
+    \((A^T)_{ij}=A_{ji}\).
+
+  So \(v\cdot w=v^Tw\).
+    
+# frame
+  \onslide<1->
+  # Lemma
+    \[(AB)^T=B^TA^T.\]
+
+  \onslide<2->
+  # Definition dfn:orthomat Orthogonal matrix
+    A square matrix \(A\) is {\em orthogonal} if \(A^TA=I\).
+
+  \onslide<3->
+  # Lemma
+    If \(A\) is orthogonal then \((Av)\cdot(Aw)=v\cdot w\).
+    \vspace{0.4cm}
+
+    \onslide<3-> i.e. orthogonal matrices preserve lengths and angles.
+
+# frame
+  \begin{center}
+  {\huge 3-d rotations}
+  \end{center}
+
+# frame
+  # Example
+    \[A=\ma \cos\phi & -\sin\phi & 0 \\ \sin\phi & \cos\phi & 0 \\ 0 &
+    0 & 1\mz\]
+
+    \[B=\ma 1 & 0 & 0 \\ 0 & 0 & -1 \\ 0 & 1 & 0 \mz\]
+    
+    \[C=\ma 0 & 0 & 1 \\ 0 & 1 & 0 \\ -1 & 0 & 0\mz\]
+
+# frame
+  # Example
+    \[D=\ma 0 & 0 & 1 \\ 1 & 0 & 0 \\ 0 & 1 & 0\mz.\]
+
+  - Find axis \(u\): solve \(Du=u\).
+  - Find angle: pick \(v\perp u\) and compute angle between \(v\) and
+    \(Dv\).
+
+# frame
+  # Example
+    \[E=\ma \frac{1}{3} & \frac{1}{3}+\frac{1}{\sqrt{3}} &
+    -\frac{1}{3}+\frac{1}{\sqrt{3}} \\ \frac{1}{3}-\frac{1}{\sqrt{3}}
+    & \frac{1}{3} &
+    -\frac{1}{3}-\frac{1}{\sqrt{3}}\\ -\frac{1}{3}-\frac{1}{\sqrt{3}}
+    & -\frac{1}{3}+\frac{1}{\sqrt{3}} & \frac{1}{3} \mz.\]
+
+  - Find axis \(u\): solve \(Eu=u\).
+  - Find angle: pick \(v\perp u\) and compute angle between \(v\) and
+    \(Ev\).
+
+# frame
+  We saw earlier that \(\exp\ma 0 & -\theta \\ \theta & 0 \mz=\ma
+  \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta\mz\). In fact...
+
+  # Theorem
+    \(\exp(tA)\) is orthogonal for all \(t\in\RR\) if and only if
+    \(A\) is {\em antisymmetric}, i.e. \(A^T=-A\).
+  # proof
+    If \(A^T=-A\) then
+    \[(\exp(tA))^T=\exp(tA^T)=\exp(-tA).\]
+    \[\exp(-tA)\exp(tA)=I,\]
+    so \(\exp(tA)\) is orthogonal. Conversely...
+
+# frame
+  # Theorem
+    \(\exp(tA)\) is orthogonal for all \(t\in\RR\) if and only if
+    \(A\) is {\em antisymmetric}, i.e. \(A^T=-A\).
+  # proof
+    If \(\exp(tA)\) is orthogonal, then \(\exp(tA)^T\exp(tA)=I\) for
+    all \(t\). Differentiate with respect to \(t\):
+    \[A^T\exp(tA^T)\exp(tA)+\exp(tA^T)A\exp(tA)=0,\]
+    and set \(t=0\):
+    \[A^T+A=0,\qquad\mbox{ as }\exp(0A)=I.\]
+
+# frame
+  Need to show:
+  \begin{align*}
+  \exp(B)^T&=\exp(B^T)\\
+  \exp(-B)\exp(B)&=I\\
+  \frac{d}{dt}\exp(tA)&=A\exp(tA)\\
+  \frac{d}{dt}(A(t)B(t))&=\frac{dA(t)}{dt}B(t)+A(t)\frac{dB(t)}{dt}.
+  \end{align*}
+
