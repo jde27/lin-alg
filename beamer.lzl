@@ -223,12 +223,15 @@
     \(Ev\).
 
 # frame
-  We saw earlier that \(\exp\ma 0 & -\theta \\ \theta & 0 \mz=\ma
-  \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta\mz\). In fact...
+  \onslide<1->We saw earlier that \(\exp\ma 0 & -\theta \\ \theta & 0
+  \mz=\ma \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta\mz\). In
+  fact...
 
+  \onslide<2->
   # Theorem
     \(\exp(tA)\) is orthogonal for all \(t\in\RR\) if and only if
     \(A\) is {\em antisymmetric}, i.e. \(A^T=-A\).
+  \onslide<3->
   # proof
     If \(A^T=-A\) then
     \[(\exp(tA))^T=\exp(tA^T)=\exp(-tA).\]
@@ -236,9 +239,11 @@
     so \(\exp(tA)\) is orthogonal. Conversely...
 
 # frame
+  \onslide<1->
   # Theorem
     \(\exp(tA)\) is orthogonal for all \(t\in\RR\) if and only if
     \(A\) is {\em antisymmetric}, i.e. \(A^T=-A\).
+  \onslide<2->
   # proof
     If \(\exp(tA)\) is orthogonal, then \(\exp(tA)^T\exp(tA)=I\) for
     all \(t\). Differentiate with respect to \(t\):
