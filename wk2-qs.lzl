@@ -1,0 +1,145 @@
+@ title Linear Algebra Worksheet 2
+@ author Jonny Evans
+@ date
+@ include head
+
+\setcounter{section}{2}
+
+Here is a list \(\mathcal{V}\) of vectors \[u=\ma 1 \\ 1 \mz,\qquad
+v=\ma 1 \\ 2\mz,\qquad w=\ma -3 \\ 1 \\ 2\mz,\qquad \xi=\ma 0 \\ 1
+\\ -1\mz.\]
+
+# Exercise exr:orth
+  For every vector in \(\mathcal{V}\), find its length and write down
+  a vector orthogonal to it.
+
+# Exercise ex:dotprods
+  Find the angle between \(u\) and \(v\). Find the angle between \(w\)
+  and \(\xi\).
+
+Here is a list \(\mathcal{M}\) of matrices. \[A=\ma \frac{1}{2} & 0 &
+\frac{1}{\sqrt{2}} \\ 0 & 1 & 0 \\ \frac{1}{2} & 0 &
+-\frac{1}{\sqrt{2}}\mz,\quad B=\ma \frac{3}{4} & \frac{1}{4} &
+\frac{1}{2}\sqrt{\frac{3}{2}} \\ \frac{1}{4} & \frac{3}{4} &
+-\frac{1}{2}\sqrt{\frac{3}{2}} \\ -\frac{1}{2}\sqrt{\frac{3}{2}} &
+\frac{1}{2}\sqrt{\frac{3}{2}} & \frac{1}{2} \mz,\quad C=\ma
+\frac{1}{3} & \frac{1}{3}+\frac{1}{\sqrt{3}} &
+-\frac{1}{3}+\frac{1}{\sqrt{3}} \\ \frac{1}{3}-\frac{1}{\sqrt{3}} &
+\frac{1}{3} &
+-\frac{1}{3}-\frac{1}{\sqrt{3}}\\ -\frac{1}{3}-\frac{1}{\sqrt{3}} &
+-\frac{1}{3}+\frac{1}{\sqrt{3}} & \frac{1}{3} \mz.\]
+
+# Exercise exr:orthogmat
+  Which matrices \(M\in\mathcal{M}\) are orthogonal matrices? (Hint:
+  There should be two!)
+
+# Exercise exr:3drot
+  The orthogonal matrices from \(\mathcal{M}\) are actually rotation
+  matrices. In each case, find the axis and angle of rotation.
+
+Here is a list \(\mathcal{N}\) of matrices
+\[D=\ma 1 & 2 & 0 & 1 & 3 \\ 0 & 0 & 1 & 2 & 1\mz,\quad E=\ma 0 & 1 & 0
+& 2 \\ 1 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0\mz,\qquad F=\ma 2 & 2 & 3 \\ 0 & 1
+& 1 \\ 0 & 0 & 1\mz,\qquad G=\ma 1 & 0 & 8 \\ 0 & 1 & 2 \\ 0 & 0 & 0\mz.\]
+
+# Exercise exr:echform
+  Which of the matrices \(N\in\mathcal{N}\) are in echelon form? Which
+  are in reduced echelon form?
+
+# Exercise exr:simeqech
+  For each \(N\in\mathcal{N}\) which is in reduced echelon form, state
+  (a) for which vectors \(b\) the equation \(Nv=b\) has a solution and
+  (b) the dimension of the space of solutions to \(Nv=b\), assuming
+  that \(b\) is chosen so that there is a solution.
+
+# Exercise exr:simeq
+  For each system of simultaneous equations below, write it in matrix
+  form, put the augmented matrix into reduced echelon form using row
+  operations. Determine if the system has a solution and, if it does,
+  give the general solution.
+
+  \begin{center}
+  \begin{tabular}{p{3cm}|p{3cm}|p{3cm}}
+  {\begin{align*}x+y+2z+3w&=0\\ y+4z-w&=1\end{align*}} &
+  {\begin{align*}x&=y-3\\ 2x+y&=6\\ y-3x&=1\end{align*}} &
+  {\begin{align*} 4x-w&=0\\ 3y-2z+w&=4\\ 4x-2y+4z-3w&=0\\ 3x+y-z&=2 \end{align*}}
+  \end{tabular}
+  \end{center}
+
+# Exercise
+  Put the following matrices into reduced echelon form using row
+  operations. In each case, what is the number of free indices?
+  \[X=\ma 1 & 1 & 0 & 0 & 0 \\ 1 & 1 & 1 & 0 & 0 \\ 1 & 1 & 1 & 1 & 0
+  \\ 1 & 1 & 1 & 1 & 1 \mz,\quad Y=\ma 2 & 0 & 1 \\ 0 & 1 & 0 \\ 1 & 3
+  & -1\mz,\quad Z=\ma 1 & 2 & 3 & 4 \\ 5 & 6 & 7 & 8 \\ 9 & 10 & 11 &
+  12\mz.\]
+
+\newpage
+
+# Exercise exr:assoc
+  Let \(A,B,C\) be \(m\)-by-\(n\), \(n\)-by-\(p\) and \(p\)-by-\(q\)
+  matrices respectively. Write out the matrix products \(A(BC)\) and
+  \((AB)C\) in index notation and check that they give the same answer
+  (this shows that matrix multiplication is associative).
+
+# Exercise exr:orthogmat
+  Suppose that \(A\) is an \(n\)-by-\(n\) matrix whose columns are the
+  vectors \(v_1,\ldots,v_n\). Show that \(A\) is an orthogonal matrix
+  (i.e. \(A^TA=I\)) if and only if \[v_i\cdot v_j=\begin{cases}1\mbox{
+  if }i=j\\0\mbox{ if }i\neq j\end{cases}\mbox{ for all }i,j.\] In
+  other words, the columns of \(A\) are orthogonal to one another
+  (this is where the name ``orthogonal matrix'' comes from).
+
+# Exercise exr:symmantisymm
+  We say that a matrix \(M\) is {\em symmetric} if \(M^T=M\) and {\em
+  antisymmetric} if \(M^T=-M\).
+  ! Show that if \(N\) is an \(m\)-by-\(n\) matrix then \(MM^T\) is a
+    symmetric \(m\)-by-\(m\) matrix and \(M^TM\) is a symmetric
+    \(n\)-by-\(n\) matrix.
+  ! Show that, given any \(n\)-by-\(n\)
+    matrix \(C\), the matrix \(A=C+C^T\) is symmetric and the matrix
+    \(B=C-C^T\) is antisymmetric. Deduce that \(C\) can be written as
+    the sum of a symmetric and an antisymmetric matrix (called the {\em
+    symmetric} and {\em antisymmetric} parts of \(C\) respectively).
+
+# Exercise exr:determined
+  A system of \(m\) equations in \(n\) unknowns is called {\em
+  underdetermined} if \(m<n\) and overdetermined if \(m>n\). As rules
+  of thumb, underdetermined equations tend to have general solutions
+  with \(m-n\) free parameters, and overdetermined equations tend to
+  have no solutions. Give counterexamples to these rules of thumb
+  (e.g. an underdetermined system with no solutions and an
+  overdetermined system with a solution).
+
+\newpage
+
+* Assessed problems for Week 2
+
+Total marks available: 20.
+
+# Question
+  Find the angle between the vectors \(v=\ma
+  \frac{1}{2\sqrt{6}}(3+\sqrt{2}) \\ \frac{1}{2\sqrt{6}}(-3+\sqrt{2})
+  \\ \frac{1}{2\sqrt{3}} \mz\) and \(w=\ma \frac{1}{\sqrt{3}}
+  \\ \frac{1}{\sqrt{3}} \\ \frac{1}{\sqrt{3}}\mz\). Find a vector
+  \(u\) which is orthogonal to both of them. \mks{4}
+
+# Question
+  The matrix \(A=\ma \frac{1}{2} & \frac{1}{2} & \frac{1}{\sqrt{2}}
+  \\ \frac{1}{2} & \frac{1}{2} & -\frac{1}{\sqrt{2}}
+  \\ -\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} & 0\mz\) is a 3-d
+  rotation matrix. Check that \(A\) is orthogonal. Find the axis and
+  angle of rotation. \mks{8}
+
+# Question
+  Write the system of simultaneous equations
+  \begin{align*}3x+2y+z&=0\\ 3x+y+2z&=3\\ -x-y&=1\end{align*}
+  as a matrix equation. Using row operations, put the augmented matrix
+  \mks{8} in reduced echelon form, and hence find the general solution
+  of the system of equations.
+
+\rule{\textwidth}{0.4pt}
+
+\mks{Total/20}
+
+
