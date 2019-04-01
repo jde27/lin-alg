@@ -1,0 +1,300 @@
+\documentclass{article}
+\title{Linear Algebra Worksheet 1}
+\author{Jonny Evans}
+\date{\vspace{-1cm}}
+\include{head}
+\begin{document}
+\maketitle
+\setcounter{section}{1}
+
+
+Here is a list \(\mathcal{V}\) of vectors
+\begin{align*}
+p&=\ma 1 \\ 0\mz& q&=\ma 0 \\ 1\mz & r&=\ma 1\\ 1\mz\\
+s&=\ma 1 \\ -2\mz& t&=\ma -1/2 \\ 7 \\ i\mz& u&=\ma 1 \\ 2 \\ 3\mz\\
+v&=\ma -1 \\ 0 \\ 3 \\ 0\mz& w&=\ma 1 \\ -2 \\ 0 \\ 0\mz &\xi&=\ma b\\ b\\ b\\ -b\mz
+\end{align*}
+Here is a list \(\mathcal{M}\) of matrices
+\begin{align*}
+A&=\ma 0 & 1 \\ 1 & 1\mz&B&=\ma 2 & 3 \\ 1 & 1\mz&C&=\ma 1 & 1 & 1\\ 1 & 0 & -2\mz\\
+D&=\ma 1 & 1 \\ -2 & 8 \\ 1/2 & 3\mz&E&=\ma -1 & 1 & 0\mz& F&=\ma 1 & 0 & 2 \\ 1 & -1 & 1 \\ 3 & 0 & 0\mz\\
+G&=\ma 1 & 3 & -1\\ 0 & 1 & 0 \\ 1 & 1 & 0\mz&H&=\ma 1 & 0 & -1 & 0 \\ -2 & 1 & 0 & 4 \\ -17 & 2 & 3 & 5 \\ 1 & -2 & 0 & 0\mz&J&=\ma 0 & 1 & -2 & 1 \\ 1 & 1 & 1 & 1 \mz
+\end{align*}
+
+
+\begin{Exercise}\label{exr:matvec}
+For each \(V\in\mathcal{V}\) and each \(M\in\mathcal{M}\), state
+whether the vector \(MV\) is defined and, if it is defined, compute
+it.
+
+
+\end{Exercise}
+\begin{Exercise}\label{exr:matmul}
+For \(N=\ma 1 & -1\\ 2 & 0 \\ 4 & -2\mz\) and for each
+\(M\in\mathcal{M}\) state whether \(NM\) and/or \(MN\) is defined
+and calculate any products which are defined.
+
+
+\end{Exercise}
+\begin{Exercise}\label{exr:exp}
+Find the exponentials of the following matrices (\(\lambda\) is just
+some number, \(i\) is the square root of \(-1\)): \[A=\ma 1 & 1 \\ 0
+& 0\mz,\quad B=\ma 0 & 1 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0\mz,\quad
+C=\ma \lambda & 0 \\ 0 & \lambda\mz,\quad D=\ma 0 & i \\ i & 0\mz.\]
+
+
+
+
+\end{Exercise}
+\newpage
+
+
+\begin{Exercise}\label{exr:cols}
+Show that if \[A=\ma A_{11} & \cdots & A_{1n} \\ \vdots & & \vdots
+\\ A_{m1} &\cdots & A_{mn}\mz\quad\mbox{and}\quad e_1=\ma 1 \\ 0
+\\ \vdots \\ 0\mz\] then \(Ae_1\) is the first column of
+\(A\). Which vectors \(e_2,\ldots,e_n\) will give the second,
+third,..., \(n\)th columns?
+
+
+\end{Exercise}
+\begin{Exercise}\label{exr:truefalse}
+Let \(X\) and \(Y\) denote \(2\)-by-\(2\) matrices. Are the
+following statements true or false? In each case, give a proof or a
+counterexample to support your claim.
+\begin{itemize}
+\item If \(X^2=I\) then \(X=\pm I\).
+\item If \(XY=0\) then \(X=0\) or \(Y=0\).
+\item If \(X\) has real entries then \(X^2\neq -I\).
+\item If \(Xe_1=Xe_2=0\) then \(X=0\) (\(e_1,e_2\) are from
+\cref{exr:cols}).
+
+
+\end{itemize}
+\end{Exercise}
+\begin{Exercise}\label{exr:fib}
+Take the vector \(\ma 1 \\ 1 \mz\) and the matrix \(A=\ma 0 & 1 \\ 1
+& 1 \mz\). Apply \(A\) to \(v\). Then apply \(A\) again. Then apply
+\(A\) again. Continue until you spot a pattern. Can you express the
+pattern as a formula? Can you prove that this pattern is going to
+continue? (Hint: You may write \(F_n\) for the \(n\)th term in a
+certain famous sequence of numbers).
+
+
+\end{Exercise}
+\begin{Exercise}\label{exr:ref}
+Check that the matrix \[H_\phi:=\ma \cos\phi & \sin\phi \\ \sin\phi
+& -\cos\phi\mz\] fixes the vector \(v=\ma \cos(\phi/2)
+\\ \sin(\phi/2)\mz\) and sends the vector \(w=\ma -\sin(\phi/2)
+\\ \cos(\phi/2)\mz\) to \(-w\). (Hint: Remember your trigonometric
+identities...)
+
+
+{\em This means that \(H_\phi\) represents a reflection in the line
+containing \(v\).}
+
+
+\end{Exercise}
+\begin{Exercise}[Special relativity velocity addition]\label{exr:lorentz}
+Given a number \(v\), define the matrix \(\Lambda(v)=\ma
+\frac{1}{\sqrt{1-v^2}} & \frac{-v}{\sqrt{1-v^2}}
+\\ \frac{-v}{\sqrt{1-v^2}} & \frac{1}{\sqrt{1-v^2}}\mz\). Check that
+\[\frac{1}{\sqrt{1-\left(\frac{u+v}{1+uv}\right)^2}}=\frac{1+uv}{\sqrt{(1-u^2)(1-v^2)}}\]
+for all \(u,v\). Deduce that
+\[\Lambda(u)\Lambda(v)=\Lambda\left(\frac{u+v}{1+uv}\right).\]
+
+
+\end{Exercise}
+%# Exercise exr:lorentzexp
+% In the notation of \cref{exr:lorentz}, find a matrix \(M(v)\) such
+% that \(\exp(M(v))=\Lambda(v)\). (Hint: Use Assessed
+% \cref{exr:exphyp}.)
+
+
+\newpage
+
+
+\setcounter{section}{1}
+\section{Solutions}
+\setcounter{section}{1}
+
+
+\begin{Solution}\label{sol:exr:matvec}
+Here are tables of solutions for matrix/vector multiplications which
+are well-defined:
+
+
+\begin{tabular}{c|ccc}
+& \(A\) & \(B\) & \(D\) \\
+\hline
+\(p\) & \(\ma 0 \\ 1 \mz\) & \(\ma 2 \\ 1 \mz\) & \(\ma 1 \\ -2 \\ 1/2\mz\) \\
+\(q\) & \(\ma 1 \\ 1 \mz\) & \(\ma 3 \\ 1 \mz\) & \(\ma 1 \\ 8 \\ 3 \mz\) \\
+\(r\) & \(\ma 1 \\ 2 \mz\) & \(\ma 5 \\ 2 \mz\) & \(\ma 2 \\ 6 \\ 7/2\mz\) \\
+\(s\) & \(\ma -2 \\ -1\mz\) & \(\ma -4 \\ -1\mz\) & \(\ma -1 \\ -18 \\ -11/2\mz\)
+\end{tabular}
+\qquad
+\begin{tabular}{c|cc}
+& \(H\) & \(J\) \\
+\hline
+\(v\) & \(\ma -4 \\ 2 \\ 26 \\ -1\mz\) & \(\ma -6 \\ 2\mz\)\\
+\(w\) & \(\ma 1 \\ -4 \\ -21 \\ 5\mz\) & \(\ma -2 \\ -1\mz\)\\
+\(\xi\) & \(\ma 0 \\ -5b \\ -17b \\ -b\mz\) & \(\ma -2b \\ 2b\mz\)
+\end{tabular}
+
+
+\begin{tabular}{c|cccc}
+& \(C\) & \(E\) & \(F\) & \(G\)\\
+\hline
+\(t\) & \(\ma i+13/2 \\ -2i-1/2\mz\) & \(\ma 13/2\mz\) & \(\ma 2i-1/2 \\ i-13/2 \\ -3/2\mz\) & \(\ma -i+41/2\\ 7 \\ 13/2\mz\)\\
+\(u\) & \(\ma 6 \\ -5 \mz\) & \(\ma 1 \mz\) & \(\ma 7 \\ 2 \\ 3 \mz\) & \(\ma 4 \\ 2 \\ 3\mz\).
+\end{tabular}
+
+
+\end{Solution}
+\begin{Solution}\label{sol:exr:matmul}
+Here are the matrix multiplications which are well-defined:
+\begin{align*}
+\ma 1 & -1 \\ 2 & 0 \\ 4 & -2 \mz\ma 0 & 1 \\ 1 & 1 \mz&=\ma -1 & 0 \\ 0 & 2 \\ -2 & 2\mz\\
+\ma 1 & -1 \\ 2 & 0 \\ 4 & -2 \mz\ma 2 & 3 \\ 1 & 1 \mz&=\ma 1 & 2 \\ 4 & 6 \\ 6 & 10 \mz\\
+\ma 1 & -1 \\ 2 & 0 \\ 4 & -2 \mz\ma 1 & 1 & 1 \\ 1 & 0 & 2 \mz&=\ma 0 & 1 & -1 \\ 2 & 2 & 2 \\ 2 & 4 & 0\mz\\
+\ma 1 & -1 \\ 2 & 0 \\ 4 & -2 \mz\ma 0 & 1 & -2 & 1 \\ 1 & 1 & 1 & 1 \mz&=\ma -1 & 0 & -3 & 0 \\ 0 & 2 & -4 & 2 \\ -2 & 2 & -10 & 2\mz\\
+\ma 1 & 1 & 1 \\ 1 & 0 & 2 \mz\ma 1 & -1 \\ 2 & 0 \\ 4 & -2 \mz&=\ma 7 & -3 \\ 9 & -5\mz\\
+\ma -1 & 1 & 0\mz\ma 1 & -1 \\ 2 & 0 \\ 4 & -2 \mz&=\ma 1 & 1 \mz\\
+\ma 1 & 0 & 2 \\ 1 & -1 & 1 \\ 3 & 0 & 0\mz\ma 1 & -1 \\ 2 & 0 \\ 4 & -2 \mz&=\ma 9 & -5 \\ 3 & -3 \\ 3 & -3\mz\\
+\ma 1 & 3 & -1 \\ 0 & 1 & 0 \\ 1 & 1 & 0\mz\ma 1 & -1 \\ 2 & 0 \\ 4 & -2 \mz&=\ma 3 & 1 \\ 2 & 0 \\ 3 & -1\mz
+\end{align*}
+
+
+\end{Solution}
+\begin{Solution}\label{sol:exr:exp}
+\begin{enumerate}
+\item If \(A=\ma 1 & 1 \\ 0 & 0 \mz\) then
+\begin{align*}
+A^2&=\ma 1 & 1 \\ 0 & 0 \mz\\
+A^3&=\ma 1 & 1 \\ 0 & 0 \mz\\
+\cdots
+\end{align*}
+so \(\exp(A)=I+A+\frac{1}{2}A^2+\cdots=
+I+A\left(1+\frac{1}{2}+\frac{1}{3!}+\cdots\right)\). Therefore,
+since \(e-1=1+\frac{1}{2}+\frac{1}{3!}+\cdots\), we have
+\(\exp(A)=\ma e & e-1 \\ 0 & 1\mz\).
+\item If \(B=\ma 0 & 1 & 0 \\0 & 0 & 1 \\ 0 & 0 & 0\mz\) then
+\begin{align*}
+B^2&=\ma 0 & 0 & 1 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \mz\\
+B^3&=0=B^4=\cdots,
+\end{align*}
+so \(\exp(B)=I+B+\frac{1}{2}B^2=\ma 1 & 1 & 1/2 \\ 0 & 1 & 1 \\ 0
+& 0 & 1\mz\).
+\item If \(C=\ma \lambda & 0 \\ 0 & \lambda\mz\) then \(C^n=\ma
+\lambda^n & 0 \\ 0 & \lambda^n\mz\), so \(\exp(C)=\ma 1 & 0 \\ 0 &
+1 \mz+\ma \lambda & 0 \\ 0 & \lambda\mz+\frac{1}{2}\ma \lambda^2 &
+0 \\ 0 & \lambda^2\mz+\cdots=\ma e^{\lambda} & 0 \\ 0 &
+e^{\lambda}\mz\).
+\item If \(D=\ma 0 & i \\ i & 0 \mz\) then \(D^2=-I\), \(D^3=-D\),
+\(D^4=I\) and we get
+\[\exp(D)=I\left(1-\frac{1}{2!}+\frac{1}{4!}-\cdots\right)+
+D\left(1-\frac{1}{3!}+\frac{1}{5!}-\cdots\right)\]
+i.e. \(\exp(D)=\ma \cos(1) & i\sin(1) \\ i\sin(1) &
+\cos(1)\mz\). \qedhere
+
+
+\end{enumerate}
+\end{Solution}
+\begin{Solution}\label{sol:exr:cols}
+When we multiply the \(i\)th row of \(A\) into \(e_1\), we just pick
+up the first entry of \(A\) because only the first entry of \(e_1\)
+is nonzero and it is equal to one. Therefore \(Ae_1\) is the first
+column of \(A\). To get all the columns we use vectors \(e_i\),
+\(i=1,\ldots,n\) where \(e_i\) is the vector with zeros everywhere
+except in the \(i\)th row, where it has a \(1\).
+
+
+\end{Solution}
+\begin{Solution}\label{sol:exr:truefalse}
+\begin{itemize}
+\item If \(X^2=I\) then \(X=\pm I\). This is false, for example \(X=\ma
+0 & 1 \\ 1 & 0\mz\) satisfies \(X^2=I\).
+\item If \(XY=0\) then \(X=0\) or \(Y=0\). This is false, for example
+\(X=\ma 1 & 0 \\ 0 & 0 \mz\) and \(Y=\ma 0 & 0 \\ 0 & 1\mz\)
+satisfy \(XY=0\).
+\item If \(X\) has real entries then \(X^2\neq -I\). This is false, for
+example \(X=\ma 0 & -1 \\ 1 & 0 \mz\) satisfies \(X^2=-I\).
+\item If \(Xe_1=Xe_2=0\) then \(X=0\) (\(e_1,e_2\) are from
+\cref{exr:cols}). This is true, because if \(Xe_1=Xe_2=0\) then
+the columns of \(X\) are zero.
+
+
+\end{itemize}
+\end{Solution}
+\begin{Solution}\label{sol:exr:fib}
+We have \[v=\ma 1\\ 1\mz,\quad Av=\ma 1\\ 2\mz,\quad A^2v=\ma
+2\\ 3\mz,\quad A^3v=\ma 3\\ 5\mz,\quad A^4v=\ma 5\\8\mz,\ldots\] so
+it looks like the formula \(A^nv=\ma F_n\\ F_{n+1}\mz\) should hold,
+where \[F_1,F_2,F_3,F_4,F_5,F_6\ldots=1,1,2,3,5,8,\ldots\] is the
+Fibonacci sequence. Indeed, by definition \(F_{n+2}=F_{n+1}+F_n\),
+and our matrix gives \[A\ma F_n\\ F_{n+1}\mz=\ma
+F_{n+1}\\ F_n+F_{n+1}\mz=\ma F_{n+1}\\ F_{n+2}\mz,\] so since
+\(v=\ma F_1\\ F_2\mz\), the result follows by induction.
+
+
+\end{Solution}
+\begin{Solution}\label{sol:exr:ref}
+We have \[\ma \cos\phi & \sin\phi\\ \sin\phi &
+-\cos\phi\mz\ma\cos(\phi/2)\\ \sin(\phi/2)\mz=\ma
+\cos\phi\cos(\phi/2)+\sin\phi\sin(\phi/2)\\ \sin\phi\cos(\phi/2)-\cos\phi\sin(\phi/2)\mz,\]
+and the trigonometric identities \(\cos(A+B)=\cos A\cos B-\sin A\sin
+B\) and \(\sin(A+B)=\sin A\cos B+\sin B\cos A\) imply that this is
+equal to \(\ma \cos(\phi-(\phi/2))\\\sin(\phi-(\phi/2))\mz=\ma
+\cos(\phi/2)\\ \sin(\phi/2)\mz\). Similarly, we get \(H_\phi w=-w\)
+where \(w=\ma -\sin(\phi/2)\\ \cos(\phi/2)\mz\). We note that
+\(v\cdot w=-\cos(\phi/2)\sin(\phi/2)+\sin(\phi/2)\cos(\phi/2)=0\),
+so \(v\) and \(w\) are orthogonal. Therefore \(H_\phi\) represents
+the transformation which reflects in the line spanned by \(v\).
+
+
+\end{Solution}
+\begin{Solution}\label{sol:exr:lorentz}
+We have
+\begin{align*}
+\frac{1}{\sqrt{1-\left(\frac{u+v}{1+uv}\right)^2}}&=\frac{1}{\sqrt{\frac{(1+uv)^2-(u+v)^2}{(1+uv)^2}}}\\
+&=\frac{1+uv}{\sqrt{(1+uv)^2-(u+v)^2}}\\
+&=\frac{1+uv}{\sqrt{1+u^2v^2+2uv-u^2-v^2-2uv}}\\
+&=\frac{1+uv}{\sqrt{1+u^2v^2-u^2-v^2}}\\
+&=\frac{1+uv}{\sqrt{(1-u^2)(1-v^2)}}.
+\end{align*}
+Now
+\begin{align*}
+\Lambda(u)\Lambda(v)&=\frac{1}{\sqrt{(1-u^2)(1-v^2)}}\ma 1 & -u \\ -u & 1 \mz\ma 1 & -v \\ -v & 1\mz\\
+&=\frac{1}{\sqrt{(1-u^2)(1-v^2)}}\ma 1+uv & -(u+v) \\ -(u+v) & 1+uv\mz\\
+\Lambda\left(\frac{u+v}{1+uv}\right)&=\frac{1}{\sqrt{1-\left(\frac{u+v}{1+uv}\right)^2}}\ma 1 & \frac{-(u+v)}{1+uv} \\ \frac{-(u+v)}{1+uv} & 1 \mz\\
+&=\frac{1+uv}{\sqrt{(1-u^2)(1-v^2)}}\ma 1 & \frac{-(u+v)}{1+uv} \\ \frac{-(u+v)}{1+uv} & 1 \mz\\
+&=\frac{1}{\sqrt{(1-u^2)(1-v^2)}}\ma 1+uv & -(u+v) \\ -(u+v) & 1+uv \mz.
+\end{align*}
+This shows
+\(\Lambda(u)\Lambda(v)=\Lambda\left(\frac{u+v}{1+uv}\right)\).
+
+
+{\em This matrix is used in special relativity to transform from one
+reference frame to another which is moving with relative velocity
+\(v\) (working in units where the speed of light is 1, and with the
+simplifying assumption that space is 1-dimensional!). Naively, you
+would expect that if you increase the relative velocity by \(v\) and
+then by \(u\), you would end up increasing it overall by \(u+v\),
+but this formula shows that velocity addition is more subtle.}
+
+
+\end{Solution}
+%# Solution sol:exr:lorentzexp Solution to \cref{exr:lorentzexp}
+% \Cref{exr:exphyp} shows that \(\exp\ma 0 & t \\ t & 0 \mz=\ma \cosh
+% t & \sinh t \\ \sinh t & \cosh t\mz\). Any numbers \(x,y\) with
+% \(x^2-y^2=1\) can be realised as \(x=\cosh t\) and \(y=\sinh t\) for
+% some unique \(t\). If we take \(x=\frac{1}{\sqrt{1-v^2}}\) and
+% \(y=\frac{-v}{\sqrt{1-v^2}}\) then these satisfy
+% \(x^2-y^2=\frac{1}{1-v^2}-\frac{v^2}{1-v^2}=1\), so there exists a
+% \(t\) such that \(\cosh t=\frac{1}{\sqrt{1-v^2}}\) and \(\sinh
+% t=\frac{-v}{\sqrt{1-v^2}}\), and we see that \(\exp\ma 0 & t \\ t &
+% 0 \mz=\Lambda(v)\).
+
+
+\setcounter{section}{3}
+\end{document}
