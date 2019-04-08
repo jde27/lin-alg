@@ -1,0 +1,238 @@
+\documentclass{beamer}
+\title{Linear Algebra, Week 4}
+\author{Jonny Evans}
+\date{MATH105}
+\include{beamer-head}
+\begin{document}
+\maketitle
+\begin{frame}
+\begin{center}
+{\huge Eigenvalues, eigenvectors}
+\end{center}
+
+
+\end{frame}
+\begin{frame}
+\onslide<1->
+\begin{Definition}
+Let \(A\) be an \(n\)-by-\(n\) matrix. A vector \(v\in\RR^n\) is
+called an {\em eigenvector with eigenvalue \(\lambda\)} if
+\[Av=\lambda v.\]
+
+
+\end{Definition}
+\onslide<2->
+\begin{Example}
+\begin{align*}
+\onslide<2->{\ma 2 & -1 \\ 1 & 0\mz\ma 1 \\ 1\mz&=\ma 1 \\ 1\mz,\\}
+\onslide<3->{\ma -3 & 2 \\ 0 & 1\mz\ma 1 \\ 0\mz&=-3\ma 1\\ 0\mz}
+\end{align*}
+
+
+\end{Example}
+\end{frame}
+\begin{frame}
+\begin{Theorem}
+Define the {\em characteristic polynomial} of an \(n\)-by-\(n\)
+matrix \(A\) to be the polynomial \[\chi_A(t):=\det(A-tI).\] Then
+the eigenvalues of \(A\) are the roots of \(\chi_A\).
+
+
+\end{Theorem}
+\onslide<2->
+\begin{Example}
+\begin{align*}
+A&=\ma 2 & -1 \\ 1 & 0\mz\\
+B&=\ma 2 & 1 \\ 1 & 1\mz\\
+C&=\ma \frac{3}{2} & \frac{5}{2} & 3 \\ -\frac{1}{2} & -\frac{3}{2} & -3 \\ 1 & 1 & 2 \mz
+\end{align*}
+
+
+\end{Example}
+\end{frame}
+\begin{frame}
+\begin{center}
+{\huge Applications, I: Differential equations}
+\end{center}
+
+
+\end{frame}
+\begin{frame}
+{Differential equations}
+
+
+\begin{columns}[t]
+\begin{column}{0.4\textwidth}
+\begin{align*}
+\dot{x}&=2x+y\\
+\dot{y}&=x+y
+\end{align*}
+\vspace{0.5cm}
+\onslide<3->Eigenvalues \(\lambda_{\pm}=\frac{3\pm\sqrt{5}}{2}\)
+\end{column}
+\begin{column}{0.45\textwidth}
+\onslide<2->\[\frac{d}{dt}\ma x \\ y \mz=\ma 2 & 1\\ 1 &
+1\mz\ma x \\ y \mz\]
+\onslide<4->Eigenvectors \(v_{\pm}=\ma 1 \\ \frac{1\pm\sqrt{5}}{2}\mz\)
+\end{column}
+\end{columns}
+
+
+\onslide<5-> General solution
+\[\ma x \\ y\mz=Ce^{\lambda_-t}v_-+De^{\lambda_+t}v_+.\]
+
+
+\end{frame}
+\begin{frame}
+{Differential equations}
+
+
+\begin{columns}[t]
+\begin{column}{0.4\textwidth}
+\begin{align*}
+\dot{x}&=2x+y\\
+\dot{y}&=2y-x
+\end{align*}
+\vspace{0.5cm}
+\onslide<3->Eigenvalues \(\lambda_{\pm}=2\pm i\)
+\end{column}
+\begin{column}{0.45\textwidth}
+\onslide<2->\[\frac{d}{dt}\ma x \\ y \mz=\ma 2 & 1\\ -1 &
+2\mz\ma x \\ y \mz\]
+\onslide<4->Eigenvectors \(v_{\pm}=\ma 1 \\ \pm i\mz\)
+\end{column}
+\end{columns}
+
+
+\onslide<5-> General solution
+\[\ma x \\ y\mz=Ce^{\lambda_-t}v_-+De^{\lambda_+t}v_+.\]
+
+
+\end{frame}
+\begin{frame}
+{Differential equations}
+
+
+\begin{columns}[t]
+\begin{column}{0.4\textwidth}
+\begin{align*}
+\dot{x}&=x+y\\
+\dot{y}&=y
+\end{align*}
+\vspace{0.5cm}
+\onslide<3->Eigenvalues \(\lambda=1\)
+\end{column}
+\begin{column}{0.45\textwidth}
+\onslide<2->\[\frac{d}{dt}\ma x \\ y \mz=\ma 1 & 1\\ 0 &
+1\mz\ma x \\ y \mz\]
+\onslide<4->Eigenvectors \(v=\ma 1 \\ 0\mz\)
+\end{column}
+\end{columns}
+
+
+\onslide<5-> General solution?
+\onslide<6->
+\[y=Ce^t,\quad x=(Ct+D)e^t.\]
+
+
+\end{frame}
+\begin{frame}
+\begin{center}
+{\huge Applications, II: Ellipsoids}
+\end{center}
+
+
+\end{frame}
+\begin{frame}
+\begin{Definition}
+We say that an \(n\)-by-\(n\) matrix \(A\) is {\em positive
+definite} if \(v^TAv>0\) for any nonzero vector \(v\in\RR^n\).
+
+
+\end{Definition}
+\begin{Definition}
+An {\em ellipsoid} is a subset in \(\RR^n\) of the form
+\[\left\{v\in\RR^n\ :\ v^TAv=c\right\}\] for some positive
+definite symmetric matrix \(A\) and constant \(c>0\).
+
+
+\end{Definition}
+\end{frame}
+\begin{frame}
+\begin{Lemma}
+Suppose that \(A\) is a {\em real} symmetric matrix.
+\begin{itemize}
+\item <2-> The eigenvalues of \(A\) are real.
+\item <3-> If \(Au=\lambda u\) and \(Av=\mu v\) with
+\(\lambda\neq\mu\) then \(u\cdot v=0\).
+
+
+\end{itemize}
+\end{Lemma}
+\end{frame}
+\begin{frame}
+\begin{Theorem}[Spectral theorem]\label{thm:spectral}
+Suppose that \(A\) is a symmetric matrix.
+\begin{itemize}
+\item <2-> \(A\) has \(n\) orthogonal eigenvectors \(u_1,\ldots,u_n\)
+with eigenvalues \(\lambda_1,\ldots,\lambda_n\).
+\item <3-> If \(A\) is positive definite, the ellipsoid \[\{v\in\RR^n\ :\
+v^TAv=c\}\] is the result of rotating the ellipsoid
+\[\{(x_1,\ldots,x_n)\in\RR^n\ :\ \sum \lambda_ix_i^2=c\}\] so that
+the \(x_i\)-direction points along \(u_i\).
+
+
+\end{itemize}
+\end{Theorem}
+\onslide<4->
+\begin{Example}
+\(A=\ma \frac{3}{2} & -\frac{1}{2} \\ -\frac{1}{2} & \frac{3}{2}\mz\)
+
+
+\end{Example}
+\end{frame}
+\begin{frame}
+\begin{center}
+{\huge Applications, III: Dynamics}
+\end{center}
+
+
+\end{frame}
+\begin{frame}
+\begin{Example}[Fibonacci dynamics]\label{exm:fib}
+
+
+\begin{columns}[t]
+\begin{column}{0.3\textwidth}
+\[\ma 0 & 1 \\ 1 & 1\mz\]
+\end{column}
+\begin{column}{0.7\textwidth}
+\onslide<2->Eigenvalues \(\lambda_{\pm}=\frac{1\pm\sqrt{5}}{2}=-0.618,\quad 1.618\)
+\vspace{0.5cm}
+
+
+\onslide<3->Eigenvectors \(v_{\pm}=\ma 1 \\ \frac{1\pm\sqrt{5}}{2}\mz\)
+\end{column}
+\end{columns}
+\vspace{-3.5cm}
+\onslide<4->
+\tka
+\draw[thick,->] (0,0) -- (1,1.618) node [above right] {\(v_+\)};
+\draw[thick,->] (0,0) -- (1,-0.618) node [below left] {\(v_-\)};
+\onslide<5>{\draw[thick,red] (1,1/2) -- (0,2.236/2) -- (-1,-1/2) -- (0,-2.236/2) -- cycle;}
+\onslide<6>{\draw[thick,red] (1/2,3/2) -- (2.236/2,2.236/2) -- (-1/2,-3/2) -- (-2.236/2,-2.236/2) -- cycle;}
+\onslide<7>{\draw[thick,red] (3/2,2) -- (2.236/2,2.236) -- (-3/2,-2) -- (-2.236/2,-2.236) -- cycle;}
+\onslide<8>{\draw[thick,red] (2,7/2) -- (2.236,3*2.236/2) -- (-2,-7/2) -- (-2.236,-3*2.236/2) -- cycle;}
+\onslide<9>{\draw[thick,red] (7/2,11/2) -- (3*2.236/2,5*2.236/2) -- (-7/2,-11/2) -- (-3*2.236/2,-5*2.236/2) -- cycle;}
+\onslide<10->{\draw[->,blue] (0,0) -- (1,1) node [below] {\(\ma 1 \\ 1\mz\)};}
+\onslide<11->{\draw[->,blue] (0,0) -- (1,2) node [left] {\(\ma 1 \\ 2\mz\)};}
+\onslide<12->{\draw[->,blue] (0,0) -- (2,3) node [below] {\(\ma 2 \\ 3\mz\)};}
+\onslide<13->{\draw[->,blue] (0,0) -- (3,5) node [midway,above] {\(\ma 3 \\ 5\mz\)};}
+\onslide<14->{\draw[->,blue] (0,0) -- (5,8) node [midway,below] {\(\ma 5 \\ 8\mz\)};}
+\onslide<15>{\node at (5,0) {\(\lim_{n\to\infty}\frac{F_{n+1}}{F_n}=1.618\cdots\)};}
+\tkz
+
+
+\end{Example}
+\end{frame}
+\end{document}

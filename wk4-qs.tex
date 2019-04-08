@@ -1,0 +1,148 @@
+\documentclass{article}
+\title{Linear Algebra Worksheet 4}
+\author{Jonny Evans}
+\date{Workshop 4}
+\include{head}
+\begin{document}
+\maketitle
+\setcounter{section}{4}
+
+
+\begin{Exercise}\label{exr:routine1}
+Find the determinants of the following matrices by using the
+inductive formula. \[A=\ma 3 & 2 & 1 \\ 1 & 0 & 7 \\ 0 & 1 &
+0\mz,\quad B=\ma 1 & 2 & 5 & 13 \\ 0 & 1 & 2 & 1 \\ 1 & 0 & 1 & 3
+\\ 1 & 1 & 1 & 1\mz,\quad C=\ma 1 & 1 & 1 & 1 & 1 \\ 0 & 0 & 1 & 0 &
+0 \\ 0 & 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 0 & 1 \\ 1 & 0 & 0 & 0 &
+0\mz.\]
+
+
+\end{Exercise}
+\begin{Exercise}\label{exr:routine3}
+Compute the determinant of the matrix \[A=\ma 1 & t & 1 \\ 2 & 3 & 1
+\\ 1 & 0 & 2\mz.\] For which value of \(t\) does this matrix fail to
+be invertible? For this value of \(t\), find an element of
+\(\ker(A)\).
+
+
+
+
+\end{Exercise}
+\begin{Exercise}\label{exr:routineeval}
+For each matrix below, find its characteristic polynomial, its
+eigenvalues and its eigenvectors.
+\begin{gather*}
+A=\ma 1 & 5 \\ 2 & 4 \mz,\quad
+B=\ma 3 & -2 \\ 1 & 3 \mz,\quad
+C=\ma 0 & i \\ i & 0 \mz\\
+D=\ma 0 & 1 & 0 \\ 0 & 0 & 1 \\ 1 & 0 & 0 \mz,\quad
+E=\ma 1 & 1 & 0 \\ 1 & 0 & 1 \\ 0 & 1 & 1\mz,\quad
+F=\ma 0 & 1 & 0 \\ 1 & 0 & 1 \\ 0 & 1 & 0\mz\\
+G=\ma -1 & -2 & 2 \\ -1 & 1 & 1 \\ -5 & -4 & 6\mz,\quad
+H=\ma -2 & 3 & -3 \\ -6 & 7 & -6 \\ -6 & 6 & -5\mz,\quad
+J=\ma 18 & -5 & -6 \\ 81 & -20 & -18 \\ -22 & 6 & 7\mz
+\end{gather*}
+
+
+\end{Exercise}
+\begin{Exercise}\label{exr:detsum}
+Write down two \(2\)-by-\(2\) matrices \(A,B\) with
+\(\det(A)=\det(B)=1\). Find \(\det(A+B)\). Repeat twice more with
+different matrices. Can you get any value for \(\det(A+B)\)?
+
+
+\end{Exercise}
+\begin{Exercise}
+Suppose that \(A\) has an eigenvector \(v\) with eigenvalue
+\(\lambda\). Show that \(\exp(A)\) has \(v\) as an eigenvector and
+find the eigenvalue.
+
+
+\end{Exercise}
+\begin{Exercise}\label{exr:jacobian}
+The {\em Jacobian} of a differentiable map \(F\colon\RR^n\to\RR^m\)
+is the \(m\)-by-\(n\) matrix \[Jac(F)=\ma \frac{\partial
+F_1}{\partial x_1} & \frac{\partial F_1}{\partial x_2} & \cdots &
+\frac{\partial F_1}{\partial x_{n-1}} & \frac{\partial F_1}{\partial
+x_n} \\ \frac{\partial F_2}{\partial x_1} & \frac{\partial
+F_2}{\partial x_2} & \cdots & \frac{\partial F_2}{\partial x_{n-1}}
+& \frac{\partial F_2}{\partial x_n} \\ \vdots & \vdots & & \vdots &
+\vdots \\ \frac{\partial F_m}{\partial x_1} & \frac{\partial
+F_m}{\partial x_2} & \cdots &\frac{\partial F_m}{\partial x_{n-1}} &
+\frac{\partial F_m}{\partial x_n}\mz,\] where
+\(F(x_1,\ldots,x_n)=\ma
+F_1(x_1,\ldots,x_n)\\ \vdots\\ F_m(x_1,\ldots,x_n)\mz\).
+
+
+Find \(\det(Jac(F))\) in the following examples:
+\begin{enumerate}
+\item \(m=n=2\), \(F(r,\phi)=\ma r\cos\phi \\ r\sin\phi\mz\).
+\item \(m=n=3\), \(F(r,\theta,\phi)=\ma r\sin\theta\cos\phi
+\\ r\sin\theta\sin\phi \\ r\cos\theta\mz\)
+
+
+\end{enumerate}
+{\em If \(m=n\) and \(F\) is a change of coordinates
+\(\RR^n\to\RR^n\) then the determinant of the Jacobian matrix is an
+important quantity: if \(y=F(x)\) then the volume element
+\(dy_1\cdots dy_n\) is equal to \(\det(Jac(F))dx_1\cdots dx_n\). In
+the examples we've just computed the volume element in polar and
+spherical coordinates.}
+
+
+\end{Exercise}
+\begin{Exercise}\label{exr:orthaxis}
+Suppose that \(A\) is an \(n\)-by-\(n\) orthogonal matrix
+(\(AA^T=I\)).
+\begin{enumerate}
+\item Show that \(\det(A)=\pm 1\).
+\item If \(\det(A)=1\), show that \(\det(A-I)=(-1)^n\det(A-I)\). (Hint:
+Use the fact that \(A-I=A(I-A^T)\).)
+\item Deduce that if \(n\) is odd then any orthogonal matrix with
+determinant one has a fixed vector.
+
+
+\end{enumerate}
+\end{Exercise}
+\begin{Exercise}\label{exr:detprod}
+Let \(A\) be an \(n\)-by-\(n\) matrix with characteristic polynomial
+\(\chi_A(t)\); suppose that \(\chi_A(t)\) has \(n\) distinct
+roots. By considering \(\chi_A(0)\), prove that \(\det(A)\) is the
+product of the eigenvalues of \(A\). One of the coefficients in the
+polynomial \(\chi_A(t)\) is equal to minus the sum of the
+eigenvalues of \(A\): which coefficient? {\em (Hint: Recall that if
+a polynomial \(p(t)\) of degree \(n\) has roots
+\(\lambda_1,\ldots,\lambda_n\) and the coefficient of \(t^n\) is
+\(1\) then \(p(t)=(t-\lambda_1)(t-\lambda_2)\cdots(t-\lambda_n)\))}.
+
+
+\end{Exercise}
+\setcounter{section}{3}
+\section{Assessed problems for Week 4}
+
+
+Total marks available: 20.
+
+
+\begin{Question}
+Using the inductive formula, find the determinant of \(M_t=\ma 1 & 0
+& t \\ 15 & 13 & 2 \\ 8 & 7 & 1\mz\). For which value of \(t\) is
+this matrix not invertible? \mks{4} For this value of \(t\), find a
+vector \(v\) such that \(M_tv=0\).
+
+
+\end{Question}
+\begin{Question}
+Let \(a,b,c\) be numbers. Using the inductive formula, \mks{4} find
+the determinant of \(\ma a & b & c \\ b & c & a \\ c & a & b\mz\).
+
+
+\end{Question}
+\begin{Question}
+Find the eigenvalues and any eigenvectors of the following matrices
+\mks{4+8} \[\ma 2 & 1 \\ -1 & 4\mz,\quad \ma 1 & 2 & 3 \\ 2 & 0 & 2
+\\ 3 & 2 & 1\mz.\]
+
+
+\end{Question}
+\end{document}

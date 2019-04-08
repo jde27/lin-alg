@@ -1,0 +1,392 @@
+@ title Linear Algebra, Week 3
+@ author Jonny Evans
+@ date MATH105
+@ include beamer-head
+
+# frame
+  \begin{center}
+  {\huge Determinants}
+  \end{center}
+
+# frame
+  \onslide<1->
+  \(A=\ma a & b \\ c & d \mz\) is invertible if and only if
+  \(ad-bc\neq 0\).
+
+  What about \(n\)-by-\(n\) matrices?
+
+  \onslide<2->
+  # Theorem
+    An \(n\)-by-\(n\) matrix \(A\) is invertible if and only if its
+    {\em determinant} \(\det(A)\) is nonzero.
+
+# frame
+  {Definition of determinant}
+
+  \tka
+  \node at (0,0) {\(\ma a & b \\ c & d\mz\)};
+  \onslide<2-3> {\draw[thick,blue] (-0.3,0.26) circle [radius=0.25];
+  \draw[thick,blue] (0.3,-0.26) circle [radius=0.25];}
+  \onslide<3-> {\node at (-1,-1.5) {\(ad\)};}
+  \onslide<4-5> {\draw[thick,blue] (0.3,0.26) circle [radius=0.25];
+  \draw[thick,blue] (-0.3,-0.26) circle [radius=0.25];}
+  \onslide<5-> {\node at (1,-1.5) {\(bc\)};}
+  \onslide<6-> {\node at (0,-1.5) {\(-\)};}
+  \tkz
+
+# frame
+  {Definition of determinant}
+
+  \tka
+  \node at (0,0) {\(\ma A_{11} & A_{12} & A_{13} \\ A_{21} & A_{22} & A_{23} \\ A_{31} & A_{32} & A_{33}\mz\)};
+  \onslide<2-3> {\draw[thick,blue] (-0.95,0.5) circle [radius=0.35];
+  \draw[thick,blue] (0,0) circle [radius=0.35];
+  \draw[thick,blue] (0.95,-0.5) circle [radius=0.35];}
+  \onslide<4-5> {\draw[thick,blue] (-0.95,0.5) circle [radius=0.35];
+  \draw[thick,blue] (0.95,0) circle [radius=0.35];
+  \draw[thick,blue] (0,-0.5) circle [radius=0.35];}
+  \onslide<6-7> {\draw[thick,blue] (0,0.5) circle [radius=0.35];
+  \draw[thick,blue] (0.95,0) circle [radius=0.35];
+  \draw[thick,blue] (-0.95,-0.5) circle [radius=0.35];}
+  \onslide<8-9> {\draw[thick,blue] (0,0.5) circle [radius=0.35];
+  \draw[thick,blue] (-0.95,0) circle [radius=0.35];
+  \draw[thick,blue] (0.95,-0.5) circle [radius=0.35];}
+  \onslide<10-11> {\draw[thick,blue] (0.95,0.5) circle [radius=0.35];
+  \draw[thick,blue] (-0.95,0) circle [radius=0.35];
+  \draw[thick,blue] (0,-0.5) circle [radius=0.35];}
+  \onslide<12-13> {\draw[thick,blue] (0.95,0.5) circle [radius=0.35];
+  \draw[thick,blue] (0,0) circle [radius=0.35];
+  \draw[thick,blue] (-0.95,-0.5) circle [radius=0.35];}
+  \tkz
+
+  \tka
+  \onslide<3->{\node at (-2.3,0) {\(A_{11}A_{22}A_{33}\)};}
+  \onslide<5->{\node at (0,0) {\(-A_{11}A_{23}A_{32}\)};}
+  \onslide<7->{\node at (2.3,0) {\(+A_{12}A_{23}A_{31}\)};}
+  \onslide<9->{\node at (-2.3,-0.5) {\(-A_{12}A_{21}A_{33}\)};}
+  \onslide<11->{\node at (0,-0.5) {\(+A_{13}A_{21}A_{32}\)};}
+  \onslide<13->{\node at (2.3,-0.5) {\(-A_{13}A_{22}A_{31}\)};}
+  \onslide<14->{\begin{scope}[shift={(-2.45,0)}]\draw[thick,red] (-0.22,-0.09) circle [radius=0.13];
+  \draw[thick,red] (0.35,-0.09) circle [radius=0.13];
+  \draw[thick,red] (0.92,-0.09) circle [radius=0.13];\end{scope}}
+  \onslide<15->{\node[red] at (-2.3,0.5) {\(123\)};}
+  \onslide<16->{\draw[thick,red] (-0.22,-0.09) circle [radius=0.13];
+  \draw[thick,red] (0.35,-0.09) circle [radius=0.13];
+  \draw[thick,red] (0.92,-0.09) circle [radius=0.13];}
+  \onslide<17->{\node[red] at (0,0.5) {\(132\)};}
+  \onslide<18->{\begin{scope}[shift={(2.3,0)}]\draw[thick,red] (-0.22,-0.09) circle [radius=0.13];
+  \draw[thick,red] (0.35,-0.09) circle [radius=0.13];
+  \draw[thick,red] (0.92,-0.09) circle [radius=0.13];\end{scope}}
+  \onslide<19->{\node[red] at (2.3,0.5) {\(231\)};}
+  \onslide<20->{\begin{scope}[shift={(-2.3,-0.5)}]\draw[thick,red] (-0.22,-0.09) circle [radius=0.13];
+  \draw[thick,red] (0.35,-0.09) circle [radius=0.13];
+  \draw[thick,red] (0.92,-0.09) circle [radius=0.13];\end{scope}}
+  \onslide<21->{\node[red] at (-2.3,-1.1) {\(213\)};}
+  \onslide<22->{\begin{scope}[shift={(0,-0.5)}]\draw[thick,red] (-0.22,-0.09) circle [radius=0.13];
+  \draw[thick,red] (0.35,-0.09) circle [radius=0.13];
+  \draw[thick,red] (0.92,-0.09) circle [radius=0.13];\end{scope}}
+  \onslide<23->{\node[red] at (0,-1.1) {\(312\)};}
+  \onslide<24->{\begin{scope}[shift={(2.3,-0.5)}]\draw[thick,red] (-0.22,-0.09) circle [radius=0.13];
+  \draw[thick,red] (0.35,-0.09) circle [radius=0.13];
+  \draw[thick,red] (0.92,-0.09) circle [radius=0.13];\end{scope}}
+  \onslide<25->{\node[red] at (2.3,-1.1) {\(321\)};}
+  \tkz
+  
+  \onslide<26->{\begin{center}\color{red} Permutations of 123.\end{center}}
+  
+
+# frame
+  {Definition of determinant}
+
+  # Definition dfn:det Determinant
+  - <1-> For each permutation \(\sigma\) of \(\{1,\ldots,n\}\)
+  - <2-> form the product \(A_{1\sigma(1)}\cdots A_{n\sigma(n)}\)
+  - <3-> add a minus sign if \(\sigma\) involves an odd number of
+    swaps
+  - <4-> and sum the resulting \(n!\) terms.
+
+  \onslide<5->
+  \[\det(A)=\sum_{\sigma}\mathrm{sign}(\sigma)A_{1\sigma(1)}\cdots
+  A_{n\sigma(n)}.\]
+
+# frame
+  {Examples: diagonal matrices}
+  
+  \[\ma \lambda_1 & 0 & \cdots & 0\\ 0 & \lambda_2 & & \vdots
+  \\ \vdots & & \ddots & 0 \\ 0 & \cdots & 0 &\lambda_n\mz\]
+
+# frame
+  {Examples: upper triangular matrices}
+
+  \[\ma A_{11} & A_{12} & \cdots & A_{1n}\\ 0 & A_{22} & & A_{2n}
+  \\ \vdots & & \ddots & \vdots \\ 0 & \cdots & 0 & A_{nn}\mz\]
+
+# frame
+  {Examples: elementary matrices}
+
+  \[E_{ij}(\lambda)=\ma 1 & & & & \mbox{col }j & & \\ & \ddots & & &
+  \downarrow & & \\ \mbox{row }i&\rightarrow & 1 & & \lambda & &\\ & &
+  & \ddots & & & \\ & & & & 1 & & \\ & & & & & \ddots &\\ & & & & & &
+  1 \mz\]
+
+# frame
+  {Examples: elementary matrices}
+
+  \[E_{i}(\lambda)=\ma 1 & & \mbox{col }i & & & & \\ &
+  \ddots & \downarrow & & & & \\ \mbox{row }i&\rightarrow & \lambda &
+  & & &\\ & & & \ddots & & & \\ & & & & 1 & & \\ & & & & & \ddots
+  &\\ & & & & & & 1 \mz\]
+
+# frame
+  \begin{center}
+  {\huge Computing determinants}
+  \end{center}
+
+# frame
+  {Properties of the determinant}
+  
+  \[\det(A)=\sum_{\sigma}\mathrm{sign}(\sigma)A_{1\sigma(1)}\cdots A_{n\sigma(n)}.\]
+  \onslide<2->
+  # Lemma
+    If two rows of \(A\) coincide then \(\det(A)=0\).
+
+  \onslide<3->
+  # Lemma
+    If \(A'\) is obtained from \(A\) by a row operation of type I
+    (\(R_i\mapsto R_i+\lambda R_j\)) then \(\det(A')=\det(A)\).
+
+  \onslide<4->
+  # Corollary
+    Put \(A\) into echelon form using row operations of type I. Then
+    \(\det(A)\) is the product of the diagonal entries.
+
+# frame
+  \onslide<1->
+  # Example
+    \[A=\begin{pmatrix} 1 & 4 & -4 \\ -2 & -2 & -4 \\ 3 & -3 & 3
+    \end{pmatrix}\]
+
+  \onslide<2->
+  # Example
+    \[B=\begin{pmatrix} 2 & -3 & -1 & 4 \\ 2 & -3 & 2 & 4 \\ 2 & -1 &
+    -4 & -3 \\ 2 & -3 & 4 & 2 \end{pmatrix}\]
+
+# frame
+  {A useful trick}
+  # Lemma
+    If \(A'\) is obtained from \(A\) by swapping two rows then
+    \(\det(A')=-\det(A)\).
+
+  \onslide<2->
+  # Example
+    \[\det\ma 0 & 0 & 0 & 1 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 1 & 0
+    & 0 & 0\mz=-1\]
+
+# frame
+  \begin{center}
+  {\huge Formulas for determinants \\ and inverses}
+  \end{center}
+
+# frame
+  {``Expanding along first row.''}
+  
+  \tka[decoration=snake]
+  \node at (0,0) {\(\ma A_{11} & A_{12} & A_{13} & A_{14} \\ A_{21} & A_{22} & A_{23} & A_{24} \\ A_{31} & A_{32} & A_{33} & A_{34} \\ A_{41} & A_{42} & A_{43} & A_{44} \mz\)};
+  \onslide<2-6>{\draw[thick,blue] (-1.42,0.68) circle [radius=0.3];}
+  \onslide<3-6>{\draw[thick] (-1.8,0.65) -- (1.8,0.65);
+  \draw[thick] (-1.42,0.8) -- (-1.42,-0.8);}
+  \onslide<4-6>{\draw[red] (-0.8,-0.9) -- (1.7,-0.9) -- (1.7,0.45) -- (-0.8,0.45) -- cycle;}
+  \onslide<5-6>{\draw[->,thick,decorate] (2,0) -- (2.9,0);
+  \node at (5,0) {\(C_{11}=\ma A_{22} & A_{23} & A_{24} \\ A_{32} & A_{33} & A_{34} \\ A_{42} & A_{43} & A_{44}\mz\)};
+  \draw[red] (4.3,-0.7) -- (6.8,-0.7) -- (6.8,0.7) -- (4.3,0.7) -- cycle;}
+  \onslide<7-11>{\draw[thick,blue] (-0.48,0.68) circle [radius=0.3];}  
+  \onslide<8-11>{\draw[thick] (-1.8,0.65) -- (1.8,0.65);
+  \draw[thick] (-0.48,0.8) -- (-0.48,-0.8);}
+  \onslide<9-11>{\draw[red] (-1.7,-0.9) -- (-1,-0.9) -- (-1,0.45) -- (-1.7,0.45) -- cycle;
+  \draw[red] (0.2,-0.9) -- (1.7,-0.9) -- (1.7,0.45) -- (0.2,0.45) -- cycle;}
+  \onslide<10-11>{\draw[->,thick,decorate] (2,0) -- (2.9,0);
+  \node at (5,0) {\(C_{12}=\ma A_{21} & A_{23} & A_{24} \\ A_{31} & A_{33} & A_{34} \\ A_{41} & A_{43} & A_{44}\mz\)};
+  \draw[red] (4.3,-0.7) -- (6.8,-0.7) -- (6.8,0.7) -- (4.3,0.7) -- cycle;}
+  \onslide<12-16>{\draw[thick,blue] (0.48,0.68) circle [radius=0.3];}  
+  \onslide<13-16>{\draw[thick] (-1.8,0.65) -- (1.8,0.65);
+  \draw[thick] (0.48,0.8) -- (0.48,-0.8);}
+  \onslide<14-16>{\draw[red] (-1.7,-0.9) -- (-0.1,-0.9) -- (-0.1,0.45) -- (-1.7,0.45) -- cycle;
+  \draw[red] (1,-0.9) -- (1.7,-0.9) -- (1.7,0.45) -- (1,0.45) -- cycle;}
+  \onslide<15-16>{\draw[->,thick,decorate] (2,0) -- (2.9,0);
+  \node at (5,0) {\(C_{13}=\ma A_{21} & A_{22} & A_{24} \\ A_{31} & A_{32} & A_{34} \\ A_{41} & A_{42} & A_{44}\mz\)};
+  \draw[red] (4.3,-0.7) -- (6.8,-0.7) -- (6.8,0.7) -- (4.3,0.7) -- cycle;}
+  \onslide<17-22>{\draw[thick,blue] (1.42,0.68) circle [radius=0.3];}  
+  \onslide<18-22>{\draw[thick] (-1.8,0.65) -- (1.8,0.65);
+  \draw[thick] (1.42,0.8) -- (1.42,-0.8);}
+  \onslide<19-22>{\draw[red] (-1.7,-0.9) -- (0.8,-0.9) -- (0.8,0.45) -- (-1.7,0.45) -- cycle;}
+  \onslide<20-22>{\draw[->,thick,decorate] (2,0) -- (2.9,0);
+  \node at (5,0) {\(C_{14}=\ma A_{21} & A_{22} & A_{23} \\ A_{31} & A_{32} & A_{33} \\ A_{41} & A_{42} & A_{43}\mz\)};
+  \draw[red] (4.3,-0.7) -- (6.8,-0.7) -- (6.8,0.7) -- (4.3,0.7) -- cycle;}
+  \tkz
+  \[\onslide<6->A_{11}\det(C_{11})\onslide<11->-A_{12}\det(C_{12})\onslide<16->+A_{13}\det(C_{13})\onslide<21->-A_{14}\det(C_{14}).\]
+
+  \onslide<22->
+  # Example
+    \[A=\ma 1 & 2 & 3 \\ 4 & 5 & 6 \\ 7 & 8 & 9\mz\]
+
+# frame
+  {``Expanding along second column.''}
+
+  \tka[decoration=snake]
+  \node at (0,0) {\(\ma A_{11} & A_{12} & A_{13} & A_{14} \\ A_{21} & A_{22} & A_{23} & A_{24} \\ A_{31} & A_{32} & A_{33} & A_{34} \\ A_{41} & A_{42} & A_{43} & A_{44} \mz\)};
+  \onslide<2-6>{\draw[thick,blue] (-0.48,0.68) circle [radius=0.3];}  
+  \onslide<3-6>{\draw[thick] (-1.8,0.65) -- (1.8,0.65);
+  \draw[thick] (-0.48,0.8) -- (-0.48,-0.8);}
+  \onslide<4-6>{\draw[red] (-1.7,-0.9) -- (-1,-0.9) -- (-1,0.45) -- (-1.7,0.45) -- cycle;
+  \draw[red] (0.2,-0.9) -- (1.7,-0.9) -- (1.7,0.45) -- (0.2,0.45) -- cycle;}
+  \onslide<5-6>{\draw[->,thick,decorate] (2,0) -- (2.9,0);
+  \node at (5,0) {\(C_{12}=\ma A_{21} & A_{23} & A_{24} \\ A_{31} & A_{33} & A_{34} \\ A_{41} & A_{43} & A_{44}\mz\)};
+  \draw[red] (4.3,-0.7) -- (6.8,-0.7) -- (6.8,0.7) -- (4.3,0.7) -- cycle;}
+  \onslide<7-11>{\draw[thick,blue] (-0.48,0.28) circle [radius=0.3];}  
+  \onslide<8-11>{\draw[thick] (-1.8,0.25) -- (1.8,0.25);
+  \draw[thick] (-0.48,0.8) -- (-0.48,-0.8);}
+  \onslide<9-11>{\draw[red] (-1.7,-0.9) -- (-1,-0.9) -- (-1,0) -- (-1.7,0) -- cycle;
+  \draw[red] (0.2,-0.9) -- (1.7,-0.9) -- (1.7,0) -- (0.2,0) -- cycle;
+  \draw[red] (0.2,0.45) -- (1.7,0.45) -- (1.7,0.9) -- (0.2,0.9) -- cycle;
+  \draw[red] (-1.7,0.45) -- (-1,0.45) -- (-1,0.9) -- (-1.7,0.9) -- cycle;}
+  \onslide<10-11>{\draw[->,thick,decorate] (2,0) -- (2.9,0);
+  \node at (5,0) {\(C_{22}=\ma A_{11} & A_{13} & A_{14} \\ A_{31} & A_{33} & A_{34} \\ A_{41} & A_{43} & A_{44}\mz\)};
+  \draw[red] (4.3,-0.7) -- (6.8,-0.7) -- (6.8,0.7) -- (4.3,0.7) -- cycle;}
+  \onslide<12-16>{\draw[thick,blue] (-0.48,-0.28) circle [radius=0.3];}  
+  \onslide<13-16>{\draw[thick] (-1.8,-0.28) -- (1.8,-0.28);
+  \draw[thick] (-0.48,0.8) -- (-0.48,-0.8);}
+  \onslide<14-16>{\draw[red] (-1.7,-0.9) -- (-1,-0.9) -- (-1,-0.45) -- (-1.7,-0.45) -- cycle;
+  \draw[red] (0.2,-0.9) -- (1.7,-0.9) -- (1.7,-0.45) -- (0.2,-0.45) -- cycle;
+  \draw[red] (0.2,0) -- (1.7,0) -- (1.7,0.9) -- (0.2,0.9) -- cycle;
+  \draw[red] (-1.7,0) -- (-1,0) -- (-1,0.9) -- (-1.7,0.9) -- cycle;}
+  \onslide<15-16>{\draw[->,thick,decorate] (2,0) -- (2.9,0);
+  \node at (5,0) {\(C_{32}=\ma A_{11} & A_{13} & A_{14} \\ A_{21} & A_{23} & A_{24} \\ A_{41} & A_{43} & A_{44}\mz\)};
+  \draw[red] (4.3,-0.7) -- (6.8,-0.7) -- (6.8,0.7) -- (4.3,0.7) -- cycle;}
+  \onslide<17-22>{\draw[thick,blue] (-0.48,-0.68) circle [radius=0.3];}  
+  \onslide<18-22>{\draw[thick] (-1.8,-0.65) -- (1.8,-0.65);
+  \draw[thick] (-0.48,0.8) -- (-0.48,-0.8);}
+  \onslide<19-22>{\draw[red] (-1.7,-0.45) -- (-1,-0.45) -- (-1,0.9) -- (-1.7,0.9) -- cycle;
+  \draw[red] (0.1,-0.45) -- (1.7,-0.45) -- (1.7,0.9) -- (0.1,0.9) -- cycle;}
+  \onslide<20-22>{\draw[->,thick,decorate] (2,0) -- (2.9,0);
+  \node at (5,0) {\(C_{42}=\ma A_{11} & A_{13} & A_{14} \\ A_{21} & A_{23} & A_{24} \\ A_{31} & A_{33} & A_{34}\mz\)};
+  \draw[red] (4.3,-0.7) -- (6.8,-0.7) -- (6.8,0.7) -- (4.3,0.7) -- cycle;}
+  \tkz
+  \[\onslide<6->-A_{12}\det(C_{12})\onslide<11->+A_{22}\det(C_{22})\onslide<16->-A_{32}\det(C_{32})\onslide<21->+A_{42}\det(C_{42}).\]
+
+  \onslide<22->
+  # Example
+    \[B=\ma 1 & 1 & 2 & 3 \\ 0 & 0 & 4 & 5 \\ -1 & 2 & 1 & 1 \\ 0 & 0
+    & 2 & 3\mz\]
+
+# frame
+  {Signs}
+
+  \[\ma + & - & + & \cdots \\ - & + & - & \cdots \\+ & - & + & \cdots
+  \\ \vdots & \vdots & \vdots & \mz\]
+
+  \[A_{11}\det(C_{11})-A_{12}\det(C_{12})+A_{13}\det(C_{13})-A_{14}\det(C_{14}).\]
+
+# frame
+  {Signs}
+
+  \[\ma + & - & + & \cdots \\ - & + & - & \cdots \\+ & - & + & \cdots
+  \\ \vdots & \vdots & \vdots & \mz\]
+
+  \[-A_{12}\det(C_{12})+A_{22}\det(C_{22})-A_{32}\det(C_{32})+A_{42}\det(C_{42}).\]
+
+# frame
+  {Formula for inverses (Cramer's rule)}
+  
+  # Definition
+    The {\em adjugate matrix} of \(A\) is the matrix \[\adj(A):=\ma
+    +\det(C_{11}) & -\det(C_{12}) & +\det(C_{13}) & \cdots
+    \\ \det(C_{21}) & +\det(C_{22}) & -\det(C_{23}) & \cdots
+    \\+\det(C_{31}) & -\det(C_{32}) & +\det(C_{33}) & \cdots \\ \vdots
+    & \vdots & \vdots & \mz^T.\]
+
+  # Theorem
+    If \(\det(A)\neq 0\) then \(A^{-1}=\frac{1}{\det(A)}\adj(A)\).
+
+# frame
+  \begin{center}
+  {\huge More about determinants}
+  \end{center}
+
+# frame
+  # Lemma
+    If \(A'\) is obtained from \(A\) by \(R_i\mapsto\lambda R_i\) then
+    \(\det(A')=\lambda\det(A)\).
+
+  # Corollary
+    An \(n\)-by-\(n\) matrix is invertible if and only if its
+    determinant is nonzero.
+
+# frame
+  # Theorem
+    \[\det(AB)=\det(A)\det(B).\]
+
+# frame
+  {Geometric interpretation of determinants}
+
+  # Theorem
+    \tka
+    \filldraw[draw=none,fill=gray,opacity=0.5] (0,0) -- (2,0) -- (2,2) -- (0,2) -- cycle;
+    \draw[thick,->] (0,0) -- (2,0) node [midway,below] {\(\ma 1 \\ 0\mz\)};
+    \draw[thick,->] (0,0) -- (0,2) node [midway,left] {\(\ma 0 \\ 1\mz\)};
+    \onslide<2->{\draw[thick,->] (3,1) -- (5,1) node [midway,above] {\(A=\ma a & b \\ c & d\mz\)};}
+    \onslide<3->{\filldraw[draw=none,fill=red,opacity=0.5] (6,0) -- (8,1) -- (9,3) -- (7,2) -- cycle;
+    \draw[thick,->] (6,0) -- (8,1) node [midway,below] {\(\ma a \\ c\mz\)};
+    \draw[thick,->] (6,0) -- (7,2) node [midway,left] {\(\ma b \\ d\mz\)};}
+    \tkz
+
+    \onslide<4-> The area of the red parallelogram is \(|\det(A)|\).
+
+# frame
+  # Theorem
+    \(|\det(A)|\) is the volume of \(A(C)\), where \(C\) is the unit
+    \(n\)-cube.
+
+    \tka
+    \node (A) at (0,0) {\(\bullet\)};
+    \node (B) at (1,-0.5) {\(\bullet\)};
+    \node (C) at (3,0) {\(\bullet\)};
+    \node (D) at (2,0.5) {\(\bullet\)};
+    \node (E) at (2.5,2) {\(\bullet\)};
+    \node (F) at (4.5,2.5) {\(\bullet\)};
+    \node (G) at (3.5,1.5) {\(\bullet\)};
+    \node (H) at (5.5,2) {\(\bullet\)};
+    \filldraw[fill=gray,opacity=0.25] (D.center) -- (C.center) -- (H.center) -- (F.center) -- cycle;
+    \filldraw[fill=gray,opacity=0.25] (A.center) -- (E.center) -- (F.center) -- (D.center) -- cycle;
+    \filldraw[fill=gray,opacity=0.25] (A.center) -- (B.center) -- (C.center) -- (D.center) -- cycle;
+    \filldraw[fill=gray,opacity=0.25] (E.center) -- (G.center) -- (H.center) -- (F.center) -- cycle;
+    \filldraw[fill=gray,opacity=0.25] (A.center) -- (B.center) -- (G.center) -- (E.center) -- cycle;
+    \filldraw[fill=gray,opacity=0.25] (B.center) -- (C.center) -- (H.center) -- (G.center) -- cycle;
+    \node at (4,-1) {``Parallelopiped''};
+    \tkz
+
+# frame
+  # Theorem
+    Let \(a_1,\ldots,a_n\) be column vectors of height \(n\).
+
+    Let \(A\) be the matrix whose columns are \(a_1,\ldots,a_n\).
+
+    Let \(\Delta\) be the simplex whose vertices are at
+    \(0,a_1,\ldots,a_n\).
+
+    Then \(\mathrm{Vol}(\Delta)=\frac{1}{n!}\det(A)\).
+    \vspace{0.5cm}
+
+    \tka
+    \draw (0,-1) -- (0,2);
+    \draw (-2,1) -- (2,-1);
+    \draw (-2,-1) -- (2,1);
+    \node (A) at (0,0) {\(\bullet\)};
+    \node (B) at (-2,-1) {\(\bullet\)};
+    \node (C) at (-0.3,0.5) {\(\bullet\)};
+    \node (D) at (-2.3,1.5) {\(\bullet\)};
+    \filldraw[fill=gray,opacity=0.6] (A.center) -- (B.center) -- (D.center) -- cycle;
+    \filldraw[fill=gray,opacity=0.5] (C.center) -- (B.center) -- (D.center) -- cycle;
+    \filldraw[fill=gray,opacity=0.4] (C.center) -- (A.center) -- (D.center) -- cycle;
+    \filldraw[fill=gray,opacity=0.3] (A.center) -- (B.center) -- (C.center) -- cycle;
+    \node at (4,0.5) {\(A=\ma 1 & \frac{1}{2} & \frac{1}{2} \\ 0 & \frac{1}{2} & -\frac{1}{2} \\ 0 & \sqrt{2} & \sqrt{2}\mz\)};
+    \tkz

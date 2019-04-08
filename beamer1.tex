@@ -1,5 +1,5 @@
 \documentclass{beamer}
-\title{Linear Algebra}
+\title{Linear Algebra, Week 1}
 \author{Jonny Evans}
 \date{MATH105}
 \include{beamer-head}
@@ -311,14 +311,17 @@ If \(A\) is orthogonal then \((Av)\cdot(Aw)=v\cdot w\).
 \end{itemize}
 \end{frame}
 \begin{frame}
-We saw earlier that \(\exp\ma 0 & -\theta \\ \theta & 0 \mz=\ma
-\cos\theta & -\sin\theta \\ \sin\theta & \cos\theta\mz\). In fact...
+\onslide<1->We saw earlier that \(\exp\ma 0 & -\theta \\ \theta & 0
+\mz=\ma \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta\mz\). In
+fact...
 
 
+\onslide<2->
 \begin{Theorem}
 \(\exp(tA)\) is orthogonal for all \(t\in\RR\) if and only if
 \(A\) is {\em antisymmetric}, i.e. \(A^T=-A\).
 \end{Theorem}
+\onslide<3->
 \begin{proof}
 If \(A^T=-A\) then
 \[(\exp(tA))^T=\exp(tA^T)=\exp(-tA).\]
@@ -329,10 +332,12 @@ so \(\exp(tA)\) is orthogonal. Conversely...
 \end{proof}
 \end{frame}
 \begin{frame}
+\onslide<1->
 \begin{Theorem}
 \(\exp(tA)\) is orthogonal for all \(t\in\RR\) if and only if
 \(A\) is {\em antisymmetric}, i.e. \(A^T=-A\).
 \end{Theorem}
+\onslide<2->
 \begin{proof}
 If \(\exp(tA)\) is orthogonal, then \(\exp(tA)^T\exp(tA)=I\) for
 all \(t\). Differentiate with respect to \(t\):
