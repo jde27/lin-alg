@@ -115,7 +115,7 @@ G&=\ma 1 & 3 & -1\\ 0 & 1 & 0 \\ 1 & 1 & 0\mz&H&=\ma 1 & 0 & -1 & 0 \\ -2 & 1 & 
   \begin{tabular}{c|cccc}
   & \(C\) & \(E\) & \(F\) & \(G\)\\
   \hline
-  \(t\) & \(\ma i+13/2 \\ -2i-1/2\mz\) & \(\ma 13/2\mz\) & \(\ma 2i-1/2 \\ i-13/2 \\ -3/2\mz\) & \(\ma -i+41/2\\ 7 \\ 13/2\mz\)\\
+  \(t\) & \(\ma i+13/2 \\ -2i-1/2\mz\) & \(\ma 15/2\mz\) & \(\ma 2i-1/2 \\ i-13/2 \\ -3/2\mz\) & \(\ma -i+41/2\\ 7 \\ 13/2\mz\)\\
   \(u\) & \(\ma 6 \\ -5 \mz\) & \(\ma 1 \mz\) & \(\ma 7 \\ 2 \\ 3 \mz\) & \(\ma 4 \\ 2 \\ 3\mz\).
   \end{tabular}
 
@@ -124,9 +124,9 @@ G&=\ma 1 & 3 & -1\\ 0 & 1 & 0 \\ 1 & 1 & 0\mz&H&=\ma 1 & 0 & -1 & 0 \\ -2 & 1 & 
   \begin{align*}
   \ma 1 & -1 \\ 2 & 0 \\ 4 & -2 \mz\ma 0 & 1 \\ 1 & 1 \mz&=\ma -1 & 0 \\ 0 & 2 \\ -2 & 2\mz\\
   \ma 1 & -1 \\ 2 & 0 \\ 4 & -2 \mz\ma 2 & 3 \\ 1 & 1 \mz&=\ma 1 & 2 \\ 4 & 6 \\ 6 & 10 \mz\\
-  \ma 1 & -1 \\ 2 & 0 \\ 4 & -2 \mz\ma 1 & 1 & 1 \\ 1 & 0 & 2 \mz&=\ma 0 & 1 & -1 \\ 2 & 2 & 2 \\ 2 & 4 & 0\mz\\
+  \ma 1 & -1 \\ 2 & 0 \\ 4 & -2 \mz\ma 1 & 1 & 1 \\ 1 & 0 & -2 \mz&=\ma 0 & 1 & 3 \\ 2 & 2 & 2 \\ 2 & 4 & 8\mz\\
   \ma 1 & -1 \\ 2 & 0 \\ 4 & -2 \mz\ma 0 & 1 & -2 & 1 \\ 1 & 1 & 1 & 1 \mz&=\ma -1 & 0 & -3 & 0 \\ 0 & 2 & -4 & 2 \\ -2 & 2 & -10 & 2\mz\\
-  \ma 1 & 1 & 1 \\ 1 & 0 & 2 \mz\ma 1 & -1 \\ 2 & 0 \\ 4 & -2 \mz&=\ma 7 & -3 \\ 9 & -5\mz\\
+  \ma 1 & 1 & 1 \\ 1 & 0 & -2 \mz\ma 1 & -1 \\ 2 & 0 \\ 4 & -2 \mz&=\ma 7 & -3 \\ -7 & 3\mz\\
   \ma -1 & 1 & 0\mz\ma 1 & -1 \\ 2 & 0 \\ 4 & -2 \mz&=\ma 1 & 1 \mz\\
   \ma 1 & 0 & 2 \\ 1 & -1 & 1 \\ 3 & 0 & 0\mz\ma 1 & -1 \\ 2 & 0 \\ 4 & -2 \mz&=\ma 9 & -5 \\ 3 & -3 \\ 3 & -3\mz\\
   \ma 1 & 3 & -1 \\ 0 & 1 & 0 \\ 1 & 1 & 0\mz\ma 1 & -1 \\ 2 & 0 \\ 4 & -2 \mz&=\ma 3 & 1 \\ 2 & 0 \\ 3 & -1\mz
@@ -185,7 +185,7 @@ G&=\ma 1 & 3 & -1\\ 0 & 1 & 0 \\ 1 & 1 & 0\mz&H&=\ma 1 & 0 & -1 & 0 \\ -2 & 1 & 
 # Solution sol:exr:fib
   We have \[v=\ma 1\\ 1\mz,\quad Av=\ma 1\\ 2\mz,\quad A^2v=\ma
   2\\ 3\mz,\quad A^3v=\ma 3\\ 5\mz,\quad A^4v=\ma 5\\8\mz,\ldots\] so
-  it looks like the formula \(A^nv=\ma F_n\\ F_{n+1}\mz\) should hold,
+  it looks like the formula \(A^nv=\ma F_{n+1}\\ F_{n+2}\mz\) should hold,
   where \[F_1,F_2,F_3,F_4,F_5,F_6\ldots=1,1,2,3,5,8,\ldots\] is the
   Fibonacci sequence. Indeed, by definition \(F_{n+2}=F_{n+1}+F_n\),
   and our matrix gives \[A\ma F_n\\ F_{n+1}\mz=\ma
@@ -233,15 +233,3 @@ G&=\ma 1 & 3 & -1\\ 0 & 1 & 0 \\ 1 & 1 & 0\mz&H&=\ma 1 & 0 & -1 & 0 \\ -2 & 1 & 
   then by \(u\), you would end up increasing it overall by \(u+v\),
   but this formula shows that velocity addition is more subtle.}
 
-%# Solution sol:exr:lorentzexp Solution to \cref{exr:lorentzexp}
-%  \Cref{exr:exphyp} shows that \(\exp\ma 0 & t \\ t & 0 \mz=\ma \cosh
-%  t & \sinh t \\ \sinh t & \cosh t\mz\). Any numbers \(x,y\) with
-%  \(x^2-y^2=1\) can be realised as \(x=\cosh t\) and \(y=\sinh t\) for
-%  some unique \(t\). If we take \(x=\frac{1}{\sqrt{1-v^2}}\) and
-%  \(y=\frac{-v}{\sqrt{1-v^2}}\) then these satisfy
-%  \(x^2-y^2=\frac{1}{1-v^2}-\frac{v^2}{1-v^2}=1\), so there exists a
-%  \(t\) such that \(\cosh t=\frac{1}{\sqrt{1-v^2}}\) and \(\sinh
-%  t=\frac{-v}{\sqrt{1-v^2}}\), and we see that \(\exp\ma 0 & t \\ t &
-%  0 \mz=\Lambda(v)\).
-
-\setcounter{section}{3}
