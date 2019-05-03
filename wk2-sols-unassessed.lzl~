@@ -1,0 +1,314 @@
+@ title Linear Algebra Worksheet 2
+@ author Jonny Evans
+@ date
+@ include head
+
+\setcounter{section}{2}
+
+Here is a list \(\mathcal{V}\) of vectors \[u=\ma 1 \\ 1 \mz,\qquad
+v=\ma 1 \\ 2\mz,\qquad w=\ma -3 \\ 1 \\ 2\mz,\qquad \xi=\ma 0 \\ 1
+\\ -1\mz.\]
+
+# Exercise exr:orth
+  For every vector in \(\mathcal{V}\), find its length and write down
+  a vector orthogonal to it.
+
+# Exercise ex:dotprods
+  Find the angle between \(u\) and \(v\). Find the angle between \(w\)
+  and \(\xi\).
+
+Here is a list \(\mathcal{M}\) of matrices. \[A=\ma \frac{1}{2} & 0 &
+\frac{1}{\sqrt{2}} \\ 0 & 1 & 0 \\ \frac{1}{2} & 0 &
+-\frac{1}{\sqrt{2}}\mz,\quad B=\ma \frac{3}{4} & \frac{1}{4} &
+\frac{1}{2}\sqrt{\frac{3}{2}} \\ \frac{1}{4} & \frac{3}{4} &
+-\frac{1}{2}\sqrt{\frac{3}{2}} \\ -\frac{1}{2}\sqrt{\frac{3}{2}} &
+\frac{1}{2}\sqrt{\frac{3}{2}} & \frac{1}{2} \mz,\quad C=\ma
+\frac{1}{3} & \frac{1}{3}+\frac{1}{\sqrt{3}} &
+-\frac{1}{3}+\frac{1}{\sqrt{3}} \\ \frac{1}{3}-\frac{1}{\sqrt{3}} &
+\frac{1}{3} &
+-\frac{1}{3}-\frac{1}{\sqrt{3}}\\ -\frac{1}{3}-\frac{1}{\sqrt{3}} &
+-\frac{1}{3}+\frac{1}{\sqrt{3}} & \frac{1}{3} \mz.\]
+
+# Exercise exr:orthogmat
+  Which matrices \(M\in\mathcal{M}\) are orthogonal matrices? (Hint:
+  There should be two!)
+
+# Exercise exr:3drot
+  The orthogonal matrices from \(\mathcal{M}\) are actually rotation
+  matrices. In each case, find the axis and angle of rotation.
+
+Here is a list \(\mathcal{N}\) of matrices
+\[D=\ma 1 & 2 & 0 & 1 & 3 \\ 0 & 0 & 1 & 2 & 1\mz,\quad E=\ma 0 & 1 & 0
+& 2 \\ 1 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0\mz,\qquad F=\ma 2 & 2 & 3 \\ 0 & 1
+& 1 \\ 0 & 0 & 1\mz,\qquad G=\ma 1 & 0 & 8 \\ 0 & 1 & 2 \\ 0 & 0 & 0\mz.\]
+
+# Exercise exr:echform
+  Which of the matrices \(N\in\mathcal{N}\) are in echelon form? Which
+  are in reduced echelon form?
+
+# Exercise exr:simeqech
+  For each \(N\in\mathcal{N}\) which is in reduced echelon form, state
+  (a) for which vectors \(b\) the equation \(Nv=b\) has a solution and
+  (b) the dimension of the space of solutions to \(Nv=b\), assuming
+  that \(b\) is chosen so that there is a solution.
+
+# Exercise exr:simeq
+  For each system of simultaneous equations below, write it in matrix
+  form, put the augmented matrix into reduced echelon form using row
+  operations. Determine if the system has a solution and, if it does,
+  give the general solution.
+
+  \begin{center}
+  \begin{tabular}{p{3cm}|p{3cm}|p{3cm}}
+  {\begin{align*}x+y+2z+3w&=0\\ y+4z-w&=1\end{align*}} &
+  {\begin{align*}x&=y-3\\ 2x+y&=6\\ y-3x&=1\end{align*}} &
+  {\begin{align*} 4x-w&=0\\ 3y-2z+w&=4\\ 4x-2y+4z-3w&=0\\ 3x+y-z&=2 \end{align*}}
+  \end{tabular}
+  \end{center}
+
+# Exercise
+  Put the following matrices into reduced echelon form using row
+  operations. In each case, what is the number of free indices?
+  \[X=\ma 1 & 1 & 0 & 0 & 0 \\ 1 & 1 & 1 & 0 & 0 \\ 1 & 1 & 1 & 1 & 0
+  \\ 1 & 1 & 1 & 1 & 1 \mz,\quad Y=\ma 2 & 0 & 1 \\ 0 & 1 & 0 \\ 1 & 3
+  & -1\mz,\quad Z=\ma 1 & 2 & 3 & 4 \\ 5 & 6 & 7 & 8 \\ 9 & 10 & 11 &
+  12\mz.\]
+
+\newpage
+
+# Exercise exr:assoc
+  Let \(A,B,C\) be \(m\)-by-\(n\), \(n\)-by-\(p\) and \(p\)-by-\(q\)
+  matrices respectively. Write out the matrix products \(A(BC)\) and
+  \((AB)C\) in index notation and check that they give the same answer
+  (this shows that matrix multiplication is associative).
+
+# Exercise exr:orthogmat
+  Suppose that \(A\) is an \(n\)-by-\(n\) matrix whose columns are the
+  vectors \(v_1,\ldots,v_n\). Show that \(A\) is an orthogonal matrix
+  (i.e. \(A^TA=I\)) if and only if \[v_i\cdot v_j=\begin{cases}1\mbox{
+  if }i=j\\0\mbox{ if }i\neq j\end{cases}\mbox{ for all }i,j.\] In
+  other words, the columns of \(A\) are orthogonal to one another
+  (this is where the name ``orthogonal matrix'' comes from).
+
+# Exercise exr:symmantisymm
+  We say that a matrix \(M\) is {\em symmetric} if \(M^T=M\) and {\em
+  antisymmetric} if \(M^T=-M\).
+  ! Show that if \(N\) is an \(m\)-by-\(n\) matrix then \(MM^T\) is a
+    symmetric \(m\)-by-\(m\) matrix and \(M^TM\) is a symmetric
+    \(n\)-by-\(n\) matrix.
+  ! Show that, given any \(n\)-by-\(n\)
+    matrix \(C\), the matrix \(A=C+C^T\) is symmetric and the matrix
+    \(B=C-C^T\) is antisymmetric. Deduce that \(C\) can be written as
+    the sum of a symmetric and an antisymmetric matrix (called the {\em
+    symmetric} and {\em antisymmetric} parts of \(C\) respectively).
+
+# Exercise exr:determined
+  A system of \(m\) equations in \(n\) unknowns is called {\em
+  underdetermined} if \(m<n\) and overdetermined if \(m>n\). As rules
+  of thumb, underdetermined equations tend to have general solutions
+  with \(m-n\) free parameters, and overdetermined equations tend to
+  have no solutions. Give counterexamples to these rules of thumb
+  (e.g. an underdetermined system with no solutions and an
+  overdetermined system with a solution).
+
+\newpage
+
+* Solutions
+
+# Solution sol:exr:orth
+  Any of the following are correct, but there are many possible
+  answers (just check that the dot product with the original vector is
+  zero): \[\ma 1 \\ -1\mz,\quad \ma -2 \\ 1\mz,\quad \ma -1 \\ -3
+  \\ 0\mz, \quad \ma 1 \\ 0 \\ 0\mz.\]
+  We have \(|u|=\sqrt{2}\), \(|v|=\sqrt{5}\), \(|w|=\sqrt{14}\),
+  \(|\xi|=\sqrt{2}\).
+
+# Solution
+  We have \(u\cdot v=3\), \(|u|=\sqrt{2}\), \(|v|=\sqrt{5}\), so the
+  angle between \(u\) and \(v\) is \(\cos^{-1}(3/\sqrt{10})\approx
+  0.321750554\) radians.
+
+  We have \(w\cdot\xi=1\), \(|w|=\sqrt{14}\) and \(|\xi|=\sqrt{2}\),
+  so the angle between \(w\) and \(\xi\) is
+  \(\cos^{-1}(1/\sqrt{28})\approx 1.38067072\) radians.
+
+# Solution
+  The matrices \(B,C\) are orthogonal; \(A\) is not. You can check
+  this explicitly: \(A^TA=\ma \frac{1}{2} & 0 & 0 \\ 0 & 1 & 0 \\ 0 &
+  0 & 1\mz\), is not too hard; more of a pain
+  is: \begin{gather*}B^TB=\ma \frac{3}{4} & \frac{1}{4} &
+  -\frac{1}{2}\sqrt{\frac{3}{2}} \\ \frac{1}{4} & \frac{3}{4} &
+  \frac{1}{2}\sqrt{\frac{3}{2}} \\ \frac{1}{2}\sqrt{\frac{3}{2}} &
+  -\frac{1}{2}\sqrt{\frac{3}{2}} & \frac{1}{2} \mz\ma \frac{3}{4} &
+  \frac{1}{4} & \frac{1}{2}\sqrt{\frac{3}{2}} \\ \frac{1}{4} &
+  \frac{3}{4} & -\frac{1}{2}\sqrt{\frac{3}{2}}
+  \\ -\frac{1}{2}\sqrt{\frac{3}{2}} & \frac{1}{2}\sqrt{\frac{3}{2}} &
+  \frac{1}{2} \mz\\
+  =\ma\frac{9}{16}+\frac{1}{16}+\frac{3}{8} &
+  \frac{3}{16}+\frac{3}{16}-\frac{3}{8} &
+  \left(\frac{3}{8}-\frac{1}{8}+\frac{1}{4}\right)\sqrt{\frac{3}{2}}
+  \\ \frac{3}{16}+\frac{3}{16}-\frac{3}{8} &
+  \frac{1}{16}+\frac{9}{16}+\frac{3}{8} &
+  \left(\frac{1}{8}-\frac{3}{8}+\frac{1}{4}\right)\sqrt{\frac{3}{2}}
+  \\ \left(\frac{3}{8}-\frac{1}{8}+\frac{1}{4}\right)\sqrt{\frac{3}{2}}
+  & \left(\frac{1}{8}-\frac{3}{8}+\frac{1}{4}\right)\sqrt{\frac{3}{2}}
+  & \frac{3}{8}+\frac{3}{8}+\frac{1}{4}\mz =\ma 1 & 0 & 0 \\ 0 & 1 & 0
+  \\ 0 & 0 & 1\mz,\end{gather*} and similarly \(C^TC=I\).
+
+# Solution
+  For \(B\): A vector \(v=\ma x \\ y\\ z\mz\) pointing along the axis
+  solves \(Bv=v\). This means
+  \begin{align*}
+  \frac{3x}{4}+\frac{y}{4}+\frac{1}{2}\sqrt{\frac{3}{2}}z&=x\\
+  \frac{x}{4}+\frac{3y}{4}-\frac{1}{2}\sqrt{\frac{3}{2}}z&=y\\
+  \frac{1}{2}\left(z-\sqrt{\frac{3}{2}}x+\sqrt{\frac{3}{2}}y\right)&=z,
+  \end{align*}
+  so \(x-y=2z\sqrt{\frac{3}{2}}\) and
+  \(x-y=z\sqrt{\frac{2}{3}}\). This implies that \(z=0\) and
+  \(x=y\). Therefore the axis is \(\ma 1 \\ 1 \\ 0\mz\). If we pick
+  \(v=\ma 0 \\ 0 \\ 1\mz\) (orthogonal to the axis), it goes to
+  \(Bv=\ma \frac{1}{2}\sqrt{\frac{3}{2}}
+  \\ -\frac{1}{2}\sqrt{\frac{3}{2}} \\ \frac{1}{2}\mz\), and \(v\cdot
+  Bv=\frac{1}{2}\), so the angle of rotation is
+  \(\pi/3=\cos^{-1}(1/2)\).
+
+  For \(C\): Similar arguments give axis \(u=\ma 1 \\ 1 \\ -1\mz\) and
+  angle \(90\) degrees (e.g. if we pick \(v=\ma 1 \\ -1 \\ 0\mz\)
+  orthogonal to the axis \(u\), it goes to \(w=\ma -\frac{1}{\sqrt{3}}
+  \\ -\frac{1}{\sqrt{3}} \\ -\frac{2}{\sqrt{3}}\mz\), and \(v\cdot
+  w=0\)). \qedhere
+
+# Solution
+  \(D,F,G\) are in echelon form, \(D,G\) are in reduced echelon form,
+  \(E\) is in neither.
+
+# Solution
+  For \(D\): there are no zero-rows, so there are no constraints on
+  \(b\) for a solution to \(Dv=b\) to exist; are three free indices,
+  so the space of solutions is \(3\)-dimensional.
+
+  For \(G\): the last row is zero, so we need \(b_3=0\). There is one
+  free index, so the space of solutions (assuming there are some
+  solutions) is \(1\)-dimensional.
+
+# Solution
+  The first system is \[\begin{pmatrix}[cccc|c] 1 & 1 & 2 & 3 & 0 \\ 0
+  & 1 & 4 & -1 & 1\end{pmatrix},\] which is almost in reduced echelon
+  form already. The row operation \(R_1\mapsto R_1-R_2\) gives
+  \[\begin{pmatrix}[cccc|c] 1 & 0 & -2 & 4 & -1 \\ 0 & 1 & 4 & -1 &
+  1\end{pmatrix}.\] The general solution is therefore \(x=-1+2z-4w\),
+  \(y=1+w-4z\), i.e. \(\ma -1+2z-4w \\ 1+w-4z \\ z \\ w\mz\).
+
+  The second system is \[\begin{pmatrix}[cc|c] 1 & -1 & -3 \\ 2 & 1 &
+  6 \\ -3 & 1 & 1\end{pmatrix}\] (be careful because I mixed up the
+  order of the letters a little to trick you; systems of equations in
+  real life rarely come in the nice form we've been studying them
+  without any rearrangement). We perform the row operations
+  \(R_2\mapsto R_2-2R_1\), \(R_3\mapsto R_3+3R_1\) to clear the first
+  column: \[\begin{pmatrix}[cc|c] 1 & -1 & -3 \\ 0 & 3 & 12 \\ 0 & -2
+  & -8\end{pmatrix}.\] Now \(R_2\mapsto\frac{1}{3}R_2\),
+  \(R_3\mapsto-\frac{1}{2}R_3\) and \(R_3\mapsto R_3-R_2\) gives
+  \[\begin{pmatrix}[cc|c] 1 & -1 & -3 \\ 0 & 1 & 4 \\ 0 & 0 &
+  0\end{pmatrix}.\] Finally, \(R_1\mapsto R_1+R_2\) gives
+  \[\begin{pmatrix}[cc|c] 1 & 0 & 1 \\ 0 & 1 & 4 \\ 0 & 0 &
+  0\end{pmatrix},\] so the unique solution is \(x=1\), \(y=4\).
+
+  The third system is \[\ma 4 & 0 & 0 & -1 \\ 0 & 3 & -2 & 1 \\ 4 & -2
+  & 4 & -3 \\ 3 & 1 & -1 & 0 \mz\ma x \\y \\z \\w\mz=\ma 0 \\ 4 \\ 0
+  \\ 2\mz.\] The augmented matrix is \[\begin{pmatrix}[cccc|c] 4 & 0 &
+  0 & -1 & 0 \\ 0 & 3 & -2 & 1 & 4 \\ 4 & -2 & 4 & -3 & 0 \\ 3 & 1 &
+  -1 & 0 &2 \end{pmatrix}.\] We use the row operations \(R_3\mapsto
+  R_3-R_1\), \(R_4\mapsto R_4-\frac{3}{4}R_1\) to get
+  \[\begin{pmatrix}[cccc|c] 4 & 0 & 0 & -1 & 0 \\ 0 & 3 & -2 & 1 & 4
+  \\ 0 & -2 & 4 & -2 & 0 \\ 0 & 1 & -1 & 3/4 & 2 \end{pmatrix}.\] Now
+  we use \(R_3\mapsto R_3+\frac{2}{3}R_2\) and \(R_4\mapsto
+  R_4-\frac{1}{3}R_2\) to get \[\begin{pmatrix}[cccc|c] 4 & 0 & 0 & -1
+  & 0 \\ 0 & 3 & -2 & 1 & 4 \\ 0 & 0 & 8/3 & -4/3 & 8/3 \\ 0 & 0 &
+  -1/3 & 5/12 & 2/3\end{pmatrix}.\] Now \(R_4\mapsto
+  R_4+\frac{1}{8}R_3\) gives \[\begin{pmatrix}[cccc|c] 4 & 0 & 0 & -1
+  & 0 \\ 0 & 3 & -2 & 1 & 4 \\ 0 & 0 & 8/3 & -4/3 & 8/3 \\ 0 & 0 & 0 &
+  1/4 & 1\end{pmatrix}.\] Let's tidy up a bit with \(R_4\mapsto
+  4R_4\), \(R_3\mapsto\frac{3}{8}R_3\), which gives
+  \[\begin{pmatrix}[cccc|c] 4 & 0 & 0 & -1 & 0 \\ 0 & 3 & -2 & 1 & 4
+  \\ 0 & 0 & 1 & -1/2 & 1 \\ 0 & 0 & 0 & 1 & 4\end{pmatrix}.\] Now do
+  \(R_3\mapsto R_3+\frac{1}{2}R_4\), \(R_2\mapsto R_2+2R_3\)
+  \(R_2\mapsto R_2-R_4\), \(R_1\mapsto R_1+R_4\) to get
+  \[\begin{pmatrix}[cccc|c] 4 & 0 & 0 & 0 & 4 \\ 0 & 3 & 0 & 0 & 6
+  \\ 0 & 0 & 1 & 0 & 3 \\ 0 & 0 & 0 & 1 & 4\end{pmatrix}\] We finish
+  with \(R_1\mapsto \frac{1}{4}R_1\) and \(R_2\mapsto
+  \frac{1}{3}R_2\): \[\begin{pmatrix}[cccc|c] 1 & 0 & 0 & 0 & 1 \\ 0 &
+  1 & 0 & 0 & 2 \\ 0 & 0 & 1 & 0 & 3 \\ 0 & 0 & 0 & 1 &
+  4\end{pmatrix},\] so \(\ma 1\\ 2 \\ 3 \\4\mz\) is the unique
+  solution.
+
+# Solution
+  First, take \[X=\ma 1 & 1 & 0 & 0 & 0 \\ 1 & 1 & 1 & 0 & 0 \\ 1 & 1
+  & 1 & 1 & 0 \\ 1 & 1 & 1 & 1 & 1 \mz.\] We can clear the first
+  column just by subtracting \(R_1\) from all the other rows: \[\ma 1
+  & 1 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 1 & 0 \\ 0 & 0 &
+  1 & 1 & 1 \mz.\] Now clear column three by subtracting \(R_2\) from
+  \(R_3\) and \(R_4\), and column four by further subtracting \(R_3\)
+  from \(R_4\): \[\ma 1 & 1 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 & 0 \\ 0 & 0
+  & 0 & 1 & 0 \\ 0 & 0 & 0 & 0 & 1 \mz.\] This has one free index (the
+  index 2).
+
+  Second, take \[Y=\ma 2 & 0 & 1 \\ 0 & 1 & 0 \\ 1 & 3
+  & -1\mz.\] Subtract \(2R_1\) from \(R_3\) and \(3R_2\) from
+  \(R_3\). This gives
+  \[\ma 2 & 0 & 1 \\ 0 & 1 & 0 \\ 0 & 0 & -3\mz.\]
+  Now \(R_1\mapsto\frac{1}{2}R_1\), \(R_3\mapsto-\frac{1}{3}R_3\) and
+  \(R_1\mapsto R_1-\frac{1}{2}R_3\) gives the identity matrix
+  \[\ma 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1\mz,\]
+  as the echelon form, so there are no free indices.
+
+  Finally, take \[Z=\ma 1 & 2 & 3 & 4 \\ 5 & 6 & 7 & 8 \\ 9 & 10 & 11
+  & 12\mz.\] \(R_2\mapsto R_2-5R_1\), \(R_3\mapsto R_3-9R_1\) gives
+  \[\ma 1 & 2 & 3 & 4 \\ 0 & -4 & -8 & -12 \\ 0 & -8 & -16 & -24\mz.\]
+  \(R_2\mapsto-\frac{1}{4}R_2\), \(R_3\mapsto-\frac{1}{8}R_3\) gives
+  \[\ma 1 & 2 & 3 & 4 \\ 0 & 1 & 2 & 3 \\ 0 & 1 & 2 & 3\mz.\]
+  \(R_3\mapsto R_3-R_2\), \(R_1\mapsto R_1-2R_2\) gives
+  \[\ma 1 & 0 & -1 & -2 \\ 0 & 1 & 2 & 3 \\ 0 & 0 & 0 & 0\mz.\] There
+  are therefore two free indices (3 and 4).
+
+# Solution sol:exr:assoc
+  The two expressions are:
+  \[\sum_{j=1}^nA_{ij}\sum_{k=1}^pB_{jk}C_{k\ell}\qquad
+  \sum_{k=1}^p\left(\sum_{j=1}^nA_{ij}B_{jk}\right)C_{k\ell},\] and
+  these are both equal to \(\sum_{j=1}^n\sum_{k=1}^p
+  A_{ij}B_{jk}C_{k\ell}\).
+
+# Solution sol:exr:orthogmat
+  If the columns of \(A\) are \(v_1,\ldots,v_n\) then the rows of
+  \(A^T\) are \(v_1^T,\ldots,v_n^T\). The product \(A^TA\) has \(ij\)
+  entry equal to \(v_i^Tv_j\) (multiplying the \(i\)th row of \(A^T\)
+  into the \(j\)th column of \(A\)) which is precisely \(v_i\cdot
+  v_j\). Since \(A^TA=I\), this means \(v_i\cdot v_j=\delta_{ij}\), as
+  required. \qedhere
+
+# Solution sol:exr:symmantisymm
+  ! We have \((M^TM)^T=M^T(M^T)^T=M^TM\), so \(M^TM\) is
+    symmetric. Similarly \((MM^T)^T=(M^T)^TM^T=MM^T\).
+  ! We have \((C+C^T)^T=C^T+(C^T)^T=C^T+C\), so \(C+C^T\) is
+    symmetric. Similarly, \((C-C^T)^T=C^T-(C^T)^T=C^T-C\), so
+    \(C-C^T\) is antisymmetric. Since
+    \[C=\frac{1}{2}(C+C^T)+\frac{1}{2}(C-C^T),\]
+    we see that \(C\) can be written as the sum of a symmetric and an
+    antisymmetric matrix.
+
+# Solution 
+  \begin{align*}
+  x+y+z&=0\\
+  x+y+z&=1
+  \end{align*}
+  is an underdetermined system (three variables, two equations) with
+  no solutions.
+
+  \begin{align*}
+  x&=1\\
+  2x&=2
+  \end{align*}
+  is an overdetermined system (one variable, two equations) with a
+  solution.
+
+\newpage
+
