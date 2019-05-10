@@ -1,0 +1,445 @@
+\documentclass{article}
+\title{Linear Algebra Worksheet 3}
+\author{Jonny Evans}
+\date{Workshop 3}
+\include{head}
+\begin{document}
+\maketitle
+\setcounter{section}{1}
+
+
+\begin{Exercise}\label{exr:inv2}
+For each matrix below, determine if it is invertible and, if it is,
+write down the inverse.
+\begin{align*}
+A&=\ma 2 & 3 \\ 1 & 8\mz & B&=\ma 1 & -1 \\ 0 & 2\mz & C&=\ma 91 & 45 \\ 2 & 1\mz\\
+D&=\ma 1 & 2 \\ 1 & -3 \mz & E&=\ma 1 & 2 \\ -3 & -6\mz & F&=\ma 1 & 1 \\ 1 & 1\mz
+\end{align*}
+
+
+\end{Exercise}
+\begin{Exercise}
+For which values of the parameter \(t\) are the following matrices
+invertible? \[\ma t & 1 \\ 1 & t\mz,\quad\ma \cos t & \sin t
+\\ \sin t & -\cos t\mz,\quad \ma 2 & 1 \\ t & 7\mz.\]
+
+
+\end{Exercise}
+\begin{Exercise}\label{exr:invech}
+For each matrix below, write down the augmented matrix, put the
+left-hand side into echelon form using only row operations of type
+\(R_i\mapsto R_i+\lambda R_j\) and hence compute the
+determinant. Then further, put the left-hand side into reduced
+echelon form, and hence compute the inverses.
+\begin{align*}
+A&=\begin{pmatrix} 1 & 5 & -2 \\ -1 & 0 & -5 \\ 4 & -3 & 3 \end{pmatrix}&
+B&=\begin{pmatrix} -5 & 1 & 3 \\ -4 & -1 & 3 \\ 5 & -3 & -4 \end{pmatrix} \\
+C&=\ma 1 & 2 & 0 & 3 \\ -3 & -5 & 0 & 0 \\ -1 & -2 & 1 & -3 \\ 4 & 7 & 1 & -2\mz&
+D&=\ma 2 & 0 & 2 & 0 \\ 0 & 1 & 1 & 1\\ 2 & 0 & 5 & 0 \\ 1 & 1 & 1 & 2\mz\\
+E&=\ma 3 & 0 & 0 & 0 \\ -17 & -1 & 2 & 0 \\ -4 & -1 & 1 & 0 \\ 63 & 21 & -21 & -12\mz&
+F&=\ma -20 & -106 & -2 & 0 \\ 0 & -3 & -1 & 0 \\ 20 & 100 & -1 & 0 \\ -100 & -500 & 10 & 1 \mz
+\end{align*}
+
+
+\end{Exercise}
+\begin{Exercise}\label{exr:elem}
+Write down the inverses of the \(4\)-by-\(4\) elementary matrices
+\[E_{42}(4),\quad E_{21}(2),\quad E_{4}(3),\quad E_{34}(1),\quad
+E_{13}(2)\] (for example the inverse of \(E_{42}(4)\) is
+\(E_{42}(-4)\), rather than as a full matrix) find the product
+\[E_{42}(4)E_{21}(2)E_4(3)E_{34}(1)E_{13}(2)\] as a \(4\)-by-\(4\)
+matrix. What is the inverse of this product?
+
+
+\end{Exercise}
+\begin{Exercise}
+Let \(A\) be an \(m\)-by-\(n\) matrix. Prove the following
+statements:
+\begin{itemize}
+\item The number of leading indices is less than or equal to
+\(\min(m,n)\) (where (\(\min(a,b)\) denotes the minimum of \(a\)
+and \(b\)).
+\item If \(m<n\), the equation \(Av=0\) has a nonzero solution (Hint:
+This is equivalent to showing there are some free indices).
+\item Suppose \(m=n\). Then \(A\) is invertible if and only if \(Av=0\)
+has no solution other than \(v=0\).
+\item Suppose that \(m=n\) and that \(B\) is another \(n\)-by-\(n\)
+matrix. If \(A\) is not invertible then \(BA\) is not invertible.
+
+
+\end{itemize}
+\end{Exercise}
+\newpage
+
+
+\section{Solutions}
+
+
+\begin{Solution}
+The matrices have determinants:
+\begin{align*}
+\det(A)&=13& \det(B)&=2& \det(C)&=1\\
+\det(D)&=-5& \det(E)&=0& \det(F)&=0.
+\end{align*}
+Therefore \(A,B,C,D\) are invertible, with inverses:
+\begin{align*}
+A^{-1}&=\frac{1}{13}\ma 8 & -3 \\ -1 & 2\mz & B^{-1}&=\frac{1}{2}\ma 2 & 1 \\ 0 & 1\mz\\
+C^{-1}&=\ma 1 & -45 \\ 2 & 91\mz& D^{-1}&=-\frac{1}{5}\ma -3 & -2 \\ -1 & 1\mz.
+\end{align*}
+
+
+\end{Solution}
+\begin{Solution}
+The determinants of the three matrices are:
+\[t^2-1,\quad -\cos^2 t-\sin^2t=-1,\quad 14-t,\]
+so the determinant is nonzero for \(t\neq \pm 1\), for all \(t\) and
+for \(t\neq 14\) respectively.
+
+
+\end{Solution}
+\begin{Solution}
+
+
+\end{Solution}
+(a) We start with the matrix \[A=\begin{pmatrix}[ c c c | c c c ] 1 &
+5 & -2 & 1 & 0 & 0 \\ -1 & 0 & -5 & 0 & 1 & 0 \\ 4 & -3 & 3 & 0 & 0 &
+1 \end{pmatrix}\]
+
+
+Clear row \(2\) using \(R_2\mapsto R_2+(1)R_1\)\[\begin{pmatrix}[ c c
+c | c c c ] 1 & 5 & -2 & 1 & 0 & 0 \\ 0 & 5 & -7 & 1 & 1 & 0 \\ 4 & -3
+& 3 & 0 & 0 & 1 \end{pmatrix}\]Clear row \(3\) using \(R_3\mapsto
+R_3+(-4)R_1\)\[\begin{pmatrix}[ c c c | c c c ] 1 & 5 & -2 & 1 & 0 & 0
+\\ 0 & 5 & -7 & 1 & 1 & 0 \\ 0 & -23 & 11 & -4 & 0 & 1
+\end{pmatrix}\]Clear row \(3\) using \(R_3\mapsto
+R_3+(23/5)R_2\)\[\begin{pmatrix}[ c c c | c c c ] 1 & 5 & -2 & 1 & 0 &
+0 \\ 0 & 5 & -7 & 1 & 1 & 0 \\ 0 & 0 & -106/5 & 3/5 & 23/5 & 1
+\end{pmatrix}\]
+{\bf At this point, we see that the determinant is \(-106\).}
+
+
+Make leading entry in row 1 equal to 1 using
+\(R_1\mapsto (1/5)R_1\). \[\begin{pmatrix}[ c c c | c c c ] 1 & 5 &
+-2 & 1 & 0 & 0 \\ 0 & 1 & -7/5 & 1/5 & 1/5 & 0 \\ 0 & 0 & -106/5 & 3/5
+& 23/5 & 1 \end{pmatrix}\]Clear column 2 using \(R_1\mapsto
+R_1+(-5)R_2\)\[\begin{pmatrix}[ c c c | c c c ] 1 & 0 & 5 & 0 & -1 & 0
+\\ 0 & 1 & -7/5 & 1/5 & 1/5 & 0 \\ 0 & 0 & -106/5 & 3/5 & 23/5 & 1
+\end{pmatrix}\]Make leading entry in row 2 equal to 1 using
+\(R_2\mapsto (-5/106)R_2\). \[\begin{pmatrix}[ c c c | c c c ] 1 & 0
+& 5 & 0 & -1 & 0 \\ 0 & 1 & -7/5 & 1/5 & 1/5 & 0 \\ 0 & 0 & 1 & -3/106
+& -23/106 & -5/106 \end{pmatrix}\]Clear column 3 using \(R_1\mapsto
+R_1+(-5)R_3\)\[\begin{pmatrix}[ c c c | c c c ] 1 & 0 & 0 & 15/106 &
+9/106 & 25/106 \\ 0 & 1 & -7/5 & 1/5 & 1/5 & 0 \\ 0 & 0 & 1 & -3/106 &
+-23/106 & -5/106 \end{pmatrix}\]Clear column 3 using \(R_2\mapsto
+R_2+(7/5)R_3\)\[\begin{pmatrix}[ c c c | c c c ] 1 & 0 & 0 & 15/106 &
+9/106 & 25/106 \\ 0 & 1 & 0 & 17/106 & -11/106 & -7/106 \\ 0 & 0 & 1 &
+-3/106 & -23/106 & -5/106 \end{pmatrix}\]Now the right-hand block is
+the inverse of the matrix we started with.
+
+
+\newpage
+
+
+(b) We start with the matrix \[B=\begin{pmatrix}[ c c c | c c c ] -5 &
+1 & 3 & 1 & 0 & 0 \\ -4 & -1 & 3 & 0 & 1 & 0 \\ 5 & -3 & -4 & 0 & 0 &
+1 \end{pmatrix}\]
+
+
+Clear row \(2\) using \(R_2\mapsto R_2+(-4/5)R_1\)\[\begin{pmatrix}[ c
+c c | c c c ] -5 & 1 & 3 & 1 & 0 & 0 \\ 0 & -9/5 & 3/5 & -4/5 & 1 & 0
+\\ 5 & -3 & -4 & 0 & 0 & 1 \end{pmatrix}\]Clear row \(3\) using
+\(R_3\mapsto R_3+(1)R_1\)\[\begin{pmatrix}[ c c c | c c c ] -5 & 1 & 3
+& 1 & 0 & 0 \\ 0 & -9/5 & 3/5 & -4/5 & 1 & 0 \\ 0 & -2 & -1 & 1 & 0 &
+1 \end{pmatrix}\]Clear row \(3\) using \(R_3\mapsto
+R_3+(-10/9)R_2\)\[\begin{pmatrix}[ c c c | c c c ] -5 & 1 & 3 & 1 & 0
+& 0 \\ 0 & -9/5 & 3/5 & -4/5 & 1 & 0 \\ 0 & 0 & -5/3 & 17/9 & -10/9 &
+1 \end{pmatrix}\] {\bf At this point, we see that the determinant is
+\(-3\).}
+
+
+Make leading entry in row 0 equal to 1 using
+\(R_0\mapsto (-1/5)R_0\). \[\begin{pmatrix}[ c c c | c c c ] 1 & -1/5
+& -3/5 & -1/5 & 0 & 0 \\ 0 & -9/5 & 3/5 & -4/5 & 1 & 0 \\ 0 & 0 & -5/3
+& 17/9 & -10/9 & 1 \end{pmatrix}\]Make leading entry in row 1 equal to
+1 using \(R_1\mapsto (-5/9)R_1\). \[\begin{pmatrix}[ c c c | c c c ]
+1 & -1/5 & -3/5 & -1/5 & 0 & 0 \\ 0 & 1 & -1/3 & 4/9 & -5/9 & 0 \\ 0 &
+0 & -5/3 & 17/9 & -10/9 & 1 \end{pmatrix}\]Clear column 2 using
+\(R_1\mapsto R_1+(1/5)R_2\)\[\begin{pmatrix}[ c c c | c c c ] 1 & 0 &
+-2/3 & -1/9 & -1/9 & 0 \\ 0 & 1 & -1/3 & 4/9 & -5/9 & 0 \\ 0 & 0 &
+-5/3 & 17/9 & -10/9 & 1 \end{pmatrix}\]Make leading entry in row 2
+equal to 1 using \(R_2\mapsto (-3/5)R_2\). \[\begin{pmatrix}[ c c c |
+c c c ] 1 & 0 & -2/3 & -1/9 & -1/9 & 0 \\ 0 & 1 & -1/3 & 4/9 & -5/9 &
+0 \\ 0 & 0 & 1 & -17/15 & 2/3 & -3/5 \end{pmatrix}\]Clear column 3
+using \(R_1\mapsto R_1+(2/3)R_3\)\[\begin{pmatrix}[ c c c | c c c ] 1
+& 0 & 0 & -13/15 & 1/3 & -2/5 \\ 0 & 1 & -1/3 & 4/9 & -5/9 & 0 \\ 0 &
+0 & 1 & -17/15 & 2/3 & -3/5 \end{pmatrix}\]Clear column 3 using
+\(R_2\mapsto R_2+(1/3)R_3\)\[\begin{pmatrix}[ c c c | c c c ] 1 & 0 &
+0 & -13/15 & 1/3 & -2/5 \\ 0 & 1 & 0 & 1/15 & -1/3 & -1/5 \\ 0 & 0 & 1
+& -17/15 & 2/3 & -3/5 \end{pmatrix}\]Now the right-hand block is the
+inverse of the matrix we started with.
+
+
+\newpage
+
+
+(c) We start with the matrix \[C=\begin{pmatrix}[ c c c c | c c c c ]
+1 & 2 & 0 & 3 & 1 & 0 & 0 & 0 \\ -3 & -5 & 0 & 0 & 0 & 1 & 0 & 0 \\ -1
+& -2 & 1 & -3 & 0 & 0 & 1 & 0 \\ 4 & 7 & 1 & 2 & 0 & 0 & 0 & 1
+\end{pmatrix}\]
+
+
+Clear row \(2\) using \(R_2\mapsto R_2+(3)R_1\)\[\begin{pmatrix}[ c c
+c c | c c c c ] 1 & 2 & 0 & 3 & 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 9 & 3 & 1
+& 0 & 0 \\ -1 & -2 & 1 & -3 & 0 & 0 & 1 & 0 \\ 4 & 7 & 1 & 2 & 0 & 0 &
+0 & 1 \end{pmatrix}\]Clear row \(3\) using \(R_3\mapsto
+R_3+(1)R_1\)\[\begin{pmatrix}[ c c c c | c c c c ] 1 & 2 & 0 & 3 & 1 &
+0 & 0 & 0 \\ 0 & 1 & 0 & 9 & 3 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 & 1 & 0 &
+1 & 0 \\ 4 & 7 & 1 & 2 & 0 & 0 & 0 & 1 \end{pmatrix}\]Clear row \(4\)
+using \(R_4\mapsto R_4+(-4)R_1\)\[\begin{pmatrix}[ c c c c | c c c c ]
+1 & 2 & 0 & 3 & 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 9 & 3 & 1 & 0 & 0 \\ 0 &
+0 & 1 & 0 & 1 & 0 & 1 & 0 \\ 0 & -1 & 1 & -10 & -4 & 0 & 0 & 1
+\end{pmatrix}\]Clear row \(4\) using \(R_4\mapsto
+R_4+(1)R_2\)\[\begin{pmatrix}[ c c c c | c c c c ] 1 & 2 & 0 & 3 & 1 &
+0 & 0 & 0 \\ 0 & 1 & 0 & 9 & 3 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 & 1 & 0 &
+1 & 0 \\ 0 & 0 & 1 & -1 & -1 & 1 & 0 & 1 \end{pmatrix}\]Clear row
+\(4\) using \(R_4\mapsto R_4+(-1)R_3\)\[\begin{pmatrix}[ c c c c | c c
+c c ] 1 & 2 & 0 & 3 & 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 9 & 3 & 1 & 0 & 0
+\\ 0 & 0 & 1 & 0 & 1 & 0 & 1 & 0 \\ 0 & 0 & 0 & -1 & -2 & 1 & -1 & 1
+\end{pmatrix}\]
+{\bf At this point, we see that the determinant is \(-1\).}
+
+
+Clear column 2 using \(R_1\mapsto
+R_1+(-2)R_2\)\[\begin{pmatrix}[ c c c c | c c c c ] 1 & 0 & 0 & -15 &
+-5 & -2 & 0 & 0 \\ 0 & 1 & 0 & 9 & 3 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 & 1
+& 0 & 1 & 0 \\ 0 & 0 & 0 & -1 & -2 & 1 & -1 & 1 \end{pmatrix}\]Make
+leading entry in row 3 equal to 1 using \(R_3\mapsto (-1)R_3\).
+\[\begin{pmatrix}[ c c c c | c c c c ] 1 & 0 & 0 & -15 & -5 & -2 & 0 &
+0 \\ 0 & 1 & 0 & 9 & 3 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 & 1 & 0 & 1 & 0
+\\ 0 & 0 & 0 & 1 & 2 & -1 & 1 & -1 \end{pmatrix}\]Clear column 4 using
+\(R_1\mapsto R_1+(15)R_4\)\[\begin{pmatrix}[ c c c c | c c c c ] 1 & 0
+& 0 & 0 & 25 & -17 & 15 & -15 \\ 0 & 1 & 0 & 9 & 3 & 1 & 0 & 0 \\ 0 &
+0 & 1 & 0 & 1 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 & 2 & -1 & 1 & -1
+\end{pmatrix}\]Clear column 4 using \(R_2\mapsto
+R_2+(-9)R_4\)\[\begin{pmatrix}[ c c c c | c c c c ] 1 & 0 & 0 & 0 & 25
+& -17 & 15 & -15 \\ 0 & 1 & 0 & 0 & -15 & 10 & -9 & 9 \\ 0 & 0 & 1 & 0
+& 1 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 & 2 & -1 & 1 & -1 \end{pmatrix}\]Now
+the right-hand block is the inverse of the matrix we started with.
+
+
+\newpage
+
+
+(d) We start with the matrix \[D=\begin{pmatrix}[ c c c c | c c c c ]
+2 & 0 & 2 & 0 & 1 & 0 & 0 & 0 \\ 0 & 1 & 1 & 1 & 0 & 1 & 0 & 0 \\ 2 &
+0 & 5 & 0 & 0 & 0 & 1 & 0 \\ 1 & 1 & 1 & 2 & 0 & 0 & 0 & 1
+\end{pmatrix}\]
+
+
+Clear row \(3\) using \(R_3\mapsto R_3+(-1)R_1\)\[\begin{pmatrix}[ c c
+c c | c c c c ] 2 & 0 & 2 & 0 & 1 & 0 & 0 & 0 \\ 0 & 1 & 1 & 1 & 0 & 1
+& 0 & 0 \\ 0 & 0 & 3 & 0 & -1 & 0 & 1 & 0 \\ 1 & 1 & 1 & 2 & 0 & 0 & 0
+& 1 \end{pmatrix}\]Clear row \(4\) using \(R_4\mapsto
+R_4+(-1/2)R_1\)\[\begin{pmatrix}[ c c c c | c c c c ] 2 & 0 & 2 & 0 &
+1 & 0 & 0 & 0 \\ 0 & 1 & 1 & 1 & 0 & 1 & 0 & 0 \\ 0 & 0 & 3 & 0 & -1 &
+0 & 1 & 0 \\ 0 & 1 & 0 & 2 & -1/2 & 0 & 0 & 1 \end{pmatrix}\]Clear row
+\(4\) using \(R_4\mapsto R_4+(-1)R_2\)\[\begin{pmatrix}[ c c c c | c c
+c c ] 2 & 0 & 2 & 0 & 1 & 0 & 0 & 0 \\ 0 & 1 & 1 & 1 & 0 & 1 & 0 & 0
+\\ 0 & 0 & 3 & 0 & -1 & 0 & 1 & 0 \\ 0 & 0 & -1 & 1 & -1/2 & -1 & 0 &
+1 \end{pmatrix}\]Clear row \(4\) using \(R_4\mapsto
+R_4+(1/3)R_3\)\[\begin{pmatrix}[ c c c c | c c c c ] 2 & 0 & 2 & 0 & 1
+& 0 & 0 & 0 \\ 0 & 1 & 1 & 1 & 0 & 1 & 0 & 0 \\ 0 & 0 & 3 & 0 & -1 & 0
+& 1 & 0 \\ 0 & 0 & 0 & 1 & -5/6 & -1 & 1/3 & 1 \end{pmatrix}\] {\bf At
+this point, we see that the determinant is \(6\).}
+
+
+Make leading entry in row 0 equal to 1 using \(R_0\mapsto (1/2)R_0\).
+\[\begin{pmatrix}[ c c c c | c c c c ] 1 & 0 & 1 & 0 & 1/2 & 0 & 0 & 0
+\\ 0 & 1 & 1 & 1 & 0 & 1 & 0 & 0 \\ 0 & 0 & 3 & 0 & -1 & 0 & 1 & 0
+\\ 0 & 0 & 0 & 1 & -5/6 & -1 & 1/3 & 1 \end{pmatrix}\]Make leading
+entry in row 2 equal to 1 using \(R_2\mapsto (1/3)R_2\).
+\[\begin{pmatrix}[ c c c c | c c c c ] 1 & 0 & 1 & 0 & 1/2 & 0 & 0 & 0
+\\ 0 & 1 & 1 & 1 & 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 & -1/3 & 0 & 1/3 & 0
+\\ 0 & 0 & 0 & 1 & -5/6 & -1 & 1/3 & 1 \end{pmatrix}\]Clear column 3
+using \(R_1\mapsto R_1+(-1)R_3\)\[\begin{pmatrix}[ c c c c | c c c c ]
+1 & 0 & 0 & 0 & 5/6 & 0 & -1/3 & 0 \\ 0 & 1 & 1 & 1 & 0 & 1 & 0 & 0
+\\ 0 & 0 & 1 & 0 & -1/3 & 0 & 1/3 & 0 \\ 0 & 0 & 0 & 1 & -5/6 & -1 &
+1/3 & 1 \end{pmatrix}\]Clear column 3 using \(R_2\mapsto
+R_2+(-1)R_3\)\[\begin{pmatrix}[ c c c c | c c c c ] 1 & 0 & 0 & 0 &
+5/6 & 0 & -1/3 & 0 \\ 0 & 1 & 0 & 1 & 1/3 & 1 & -1/3 & 0 \\ 0 & 0 & 1
+& 0 & -1/3 & 0 & 1/3 & 0 \\ 0 & 0 & 0 & 1 & -5/6 & -1 & 1/3 & 1
+\end{pmatrix}\]Clear column 4 using \(R_2\mapsto
+R_2+(-1)R_4\)\[\begin{pmatrix}[ c c c c | c c c c ] 1 & 0 & 0 & 0 &
+5/6 & 0 & -1/3 & 0 \\ 0 & 1 & 0 & 0 & 7/6 & 2 & -2/3 & -1 \\ 0 & 0 & 1
+& 0 & -1/3 & 0 & 1/3 & 0 \\ 0 & 0 & 0 & 1 & -5/6 & -1 & 1/3 & 1
+\end{pmatrix}\]Now the right-hand block is the inverse of the matrix
+we started with.
+
+
+\newpage
+
+
+(e) We start with the matrix \[\begin{pmatrix}[ c c c c | c c c c ] 3
+& 0 & 0 & 0 & 1 & 0 & 0 & 0 \\ -17 & -1 & 2 & 0 & 0 & 1 & 0 & 0 \\ -4
+& -1 & 1 & 0 & 0 & 0 & 1 & 0 \\ 63 & 21 & -21 & -12 & 0 & 0 & 0 & 1
+\end{pmatrix}\]
+
+
+Clear column \(1\), row \(2\) using \(R_2\mapsto
+R_2+(17/3)R_1\)\[\begin{pmatrix}[ c c c c | c c c c ] 3 & 0 & 0 & 0 &
+1 & 0 & 0 & 0 \\ 0 & -1 & 2 & 0 & 17/3 & 1 & 0 & 0 \\ -4 & -1 & 1 & 0
+& 0 & 0 & 1 & 0 \\ 63 & 21 & -21 & -12 & 0 & 0 & 0 & 1
+\end{pmatrix}\]Clear column \(1\), row \(3\) using \(R_3\mapsto
+R_3+(4/3)R_1\)\[\begin{pmatrix}[ c c c c | c c c c ] 3 & 0 & 0 & 0 & 1
+& 0 & 0 & 0 \\ 0 & -1 & 2 & 0 & 17/3 & 1 & 0 & 0 \\ 0 & -1 & 1 & 0 &
+4/3 & 0 & 1 & 0 \\ 63 & 21 & -21 & -12 & 0 & 0 & 0 & 1
+\end{pmatrix}\]Clear column \(1\), row \(4\) using \(R_4\mapsto
+R_4+(-21)R_1\)\[\begin{pmatrix}[ c c c c | c c c c ] 3 & 0 & 0 & 0 & 1
+& 0 & 0 & 0 \\ 0 & -1 & 2 & 0 & 17/3 & 1 & 0 & 0 \\ 0 & -1 & 1 & 0 &
+4/3 & 0 & 1 & 0 \\ 0 & 21 & -21 & -12 & -21 & 0 & 0 & 1
+\end{pmatrix}\]Clear column \(2\), row \(3\) using \(R_3\mapsto
+R_3+(-1)R_2\)\[\begin{pmatrix}[ c c c c | c c c c ] 3 & 0 & 0 & 0 & 1
+& 0 & 0 & 0 \\ 0 & -1 & 2 & 0 & 17/3 & 1 & 0 & 0 \\ 0 & 0 & -1 & 0 &
+-13/3 & -1 & 1 & 0 \\ 0 & 21 & -21 & -12 & -21 & 0 & 0 & 1
+\end{pmatrix}\]Clear column \(2\), row \(4\) using \(R_4\mapsto
+R_4+(21)R_2\)\[\begin{pmatrix}[ c c c c | c c c c ] 3 & 0 & 0 & 0 & 1
+& 0 & 0 & 0 \\ 0 & -1 & 2 & 0 & 17/3 & 1 & 0 & 0 \\ 0 & 0 & -1 & 0 &
+-13/3 & -1 & 1 & 0 \\ 0 & 0 & 21 & -12 & 98 & 21 & 0 & 1
+\end{pmatrix}\]Clear column \(3\), row \(4\) using \(R_4\mapsto
+R_4+(21)R_3\)\[\begin{pmatrix}[ c c c c | c c c c ] 3 & 0 & 0 & 0 & 1
+& 0 & 0 & 0 \\ 0 & -1 & 2 & 0 & 17/3 & 1 & 0 & 0 \\ 0 & 0 & -1 & 0 &
+-13/3 & -1 & 1 & 0 \\ 0 & 0 & 0 & -12 & 7 & 0 & 21 & 1 \end{pmatrix}\]
+{\bf At this point, we see that the determinant is \(-36\).}
+
+
+Make leading entry in row 1 equal to 1 using
+\(R_1\mapsto (1/3)R_1\). \[\begin{pmatrix}[ c c c c | c c c c ] 1 & 0
+& 0 & 0 & 1/3 & 0 & 0 & 0 \\ 0 & -1 & 2 & 0 & 17/3 & 1 & 0 & 0 \\ 0 &
+0 & -1 & 0 & -13/3 & -1 & 1 & 0 \\ 0 & 0 & 0 & -12 & 7 & 0 & 21 & 1
+\end{pmatrix}\]Make leading entry in row 2 equal to 1 using
+\(R_2\mapsto (-1)R_2\). \[\begin{pmatrix}[ c c c c | c c c c ] 1 & 0
+& 0 & 0 & 1/3 & 0 & 0 & 0 \\ 0 & 1 & -2 & 0 & -17/3 & -1 & 0 & 0 \\ 0
+& 0 & -1 & 0 & -13/3 & -1 & 1 & 0 \\ 0 & 0 & 0 & -12 & 7 & 0 & 21 & 1
+\end{pmatrix}\]Make leading entry in row 3 equal to 1 using
+\(R_3\mapsto (-1)R_3\). \[\begin{pmatrix}[ c c c c | c c c c ] 1 & 0
+& 0 & 0 & 1/3 & 0 & 0 & 0 \\ 0 & 1 & -2 & 0 & -17/3 & -1 & 0 & 0 \\ 0
+& 0 & 1 & 0 & 13/3 & 1 & -1 & 0 \\ 0 & 0 & 0 & -12 & 7 & 0 & 21 & 1
+\end{pmatrix}\]Clear column 3 using \(R_2\mapsto
+R_2+(2)R_3\)\[\begin{pmatrix}[ c c c c | c c c c ] 1 & 0 & 0 & 0 & 1/3
+& 0 & 0 & 0 \\ 0 & 1 & 0 & 0 & 3 & 1 & -2 & 0 \\ 0 & 0 & 1 & 0 & 13/3
+& 1 & -1 & 0 \\ 0 & 0 & 0 & -12 & 7 & 0 & 21 & 1 \end{pmatrix}\]Make
+leading entry in row 4 equal to 1 using \(R_4\mapsto (-1/12)R_4\).
+\[\begin{pmatrix}[ c c c c | c c c c ] 1 & 0 & 0 & 0 & 1/3 & 0 & 0 & 0
+\\ 0 & 1 & 0 & 0 & 3 & 1 & -2 & 0 \\ 0 & 0 & 1 & 0 & 13/3 & 1 & -1 & 0
+\\ 0 & 0 & 0 & 1 & -7/12 & 0 & -7/4 & -1/12 \end{pmatrix}\]Now the
+right-hand block is the inverse of the matrix we started with.
+
+
+\newpage
+
+
+(f) We start with the matrix \[\begin{pmatrix}[ c c c c | c c c c ]
+-20 & -106 & -2 & 0 & 1 & 0 & 0 & 0 \\ 0 & -3 & -1 & 0 & 0 & 1 & 0 & 0
+\\ 20 & 100 & -1 & 0 & 0 & 0 & 1 & 0 \\ -100 & -500 & 10 & 1 & 0 & 0 &
+0 & 1 \end{pmatrix}\]
+
+
+Clear column \(1\), row \(3\) using \(R_3\mapsto
+R_3+(1)R_1\)\[\begin{pmatrix}[ c c c c | c c c c ] -20 & -106 & -2 & 0
+& 1 & 0 & 0 & 0 \\ 0 & -3 & -1 & 0 & 0 & 1 & 0 & 0 \\ 0 & -6 & -3 & 0
+& 1 & 0 & 1 & 0 \\ -100 & -500 & 10 & 1 & 0 & 0 & 0 & 1
+\end{pmatrix}\]Clear column \(1\), row \(4\) using \(R_4\mapsto
+R_4+(-5)R_1\)\[\begin{pmatrix}[ c c c c | c c c c ] -20 & -106 & -2 &
+0 & 1 & 0 & 0 & 0 \\ 0 & -3 & -1 & 0 & 0 & 1 & 0 & 0 \\ 0 & -6 & -3 &
+0 & 1 & 0 & 1 & 0 \\ 0 & 30 & 20 & 1 & -5 & 0 & 0 & 1
+\end{pmatrix}\]Clear column \(2\), row \(3\) using \(R_3\mapsto
+R_3+(-2)R_2\)\[\begin{pmatrix}[ c c c c | c c c c ] -20 & -106 & -2 &
+0 & 1 & 0 & 0 & 0 \\ 0 & -3 & -1 & 0 & 0 & 1 & 0 & 0 \\ 0 & 0 & -1 & 0
+& 1 & -2 & 1 & 0 \\ 0 & 30 & 20 & 1 & -5 & 0 & 0 & 1
+\end{pmatrix}\]Clear column \(2\), row \(4\) using \(R_4\mapsto
+R_4+(10)R_2\)\[\begin{pmatrix}[ c c c c | c c c c ] -20 & -106 & -2 &
+0 & 1 & 0 & 0 & 0 \\ 0 & -3 & -1 & 0 & 0 & 1 & 0 & 0 \\ 0 & 0 & -1 & 0
+& 1 & -2 & 1 & 0 \\ 0 & 0 & 10 & 1 & -5 & 10 & 0 & 1
+\end{pmatrix}\]Clear column \(3\), row \(4\) using \(R_4\mapsto
+R_4+(10)R_3\)\[\begin{pmatrix}[ c c c c | c c c c ] -20 & -106 & -2 &
+0 & 1 & 0 & 0 & 0 \\ 0 & -3 & -1 & 0 & 0 & 1 & 0 & 0 \\ 0 & 0 & -1 & 0
+& 1 & -2 & 1 & 0 \\ 0 & 0 & 0 & 1 & 5 & -10 & 10 & 1 \end{pmatrix}\]
+{\bf At this point, we see that the determinant is \(-60\).}
+
+
+Make leading entry in row 1 equal to 1 using \(R_1\mapsto
+(-1/20)R_1\). \[\begin{pmatrix}[ c c c c | c c c c ] 1 & 53/10 & 1/10
+& 0 & -1/20 & 0 & 0 & 0 \\ 0 & -3 & -1 & 0 & 0 & 1 & 0 & 0 \\ 0 & 0 &
+-1 & 0 & 1 & -2 & 1 & 0 \\ 0 & 0 & 0 & 1 & 5 & -10 & 10 & 1
+\end{pmatrix}\]Make leading entry in row 2 equal to 1 using
+\(R_2\mapsto (-1/3)R_2\). \[\begin{pmatrix}[ c c c c | c c c c ] 1 &
+53/10 & 1/10 & 0 & -1/20 & 0 & 0 & 0 \\ 0 & 1 & 1/3 & 0 & 0 & -1/3 & 0
+& 0 \\ 0 & 0 & -1 & 0 & 1 & -2 & 1 & 0 \\ 0 & 0 & 0 & 1 & 5 & -10 & 10
+& 1 \end{pmatrix}\]Clear column 2 using \(R_1\mapsto
+R_1+(-53/10)R_2\)\[\begin{pmatrix}[ c c c c | c c c c ] 1 & 0 & -5/3 &
+0 & -1/20 & 53/30 & 0 & 0 \\ 0 & 1 & 1/3 & 0 & 0 & -1/3 & 0 & 0 \\ 0 &
+0 & -1 & 0 & 1 & -2 & 1 & 0 \\ 0 & 0 & 0 & 1 & 5 & -10 & 10 & 1
+\end{pmatrix}\]Make leading entry in row 3 equal to 1 using
+\(R_3\mapsto (-1)R_3\). \[\begin{pmatrix}[ c c c c | c c c c ] 1 & 0
+& -5/3 & 0 & -1/20 & 53/30 & 0 & 0 \\ 0 & 1 & 1/3 & 0 & 0 & -1/3 & 0 &
+0 \\ 0 & 0 & 1 & 0 & -1 & 2 & -1 & 0 \\ 0 & 0 & 0 & 1 & 5 & -10 & 10 &
+1 \end{pmatrix}\]Clear column 3 using \(R_1\mapsto
+R_1+(5/3)R_3\)\[\begin{pmatrix}[ c c c c | c c c c ] 1 & 0 & 0 & 0 &
+-103/60 & 51/10 & -5/3 & 0 \\ 0 & 1 & 1/3 & 0 & 0 & -1/3 & 0 & 0 \\ 0
+& 0 & 1 & 0 & -1 & 2 & -1 & 0 \\ 0 & 0 & 0 & 1 & 5 & -10 & 10 & 1
+\end{pmatrix}\]Clear column 3 using \(R_2\mapsto
+R_2+(-1/3)R_3\)\[\begin{pmatrix}[ c c c c | c c c c ] 1 & 0 & 0 & 0 &
+-103/60 & 51/10 & -5/3 & 0 \\ 0 & 1 & 0 & 0 & 1/3 & -1 & 1/3 & 0 \\ 0
+& 0 & 1 & 0 & -1 & 2 & -1 & 0 \\ 0 & 0 & 0 & 1 & 5 & -10 & 10 & 1
+\end{pmatrix}\]Now the right-hand block is the inverse of the matrix
+we started with.
+
+
+\newpage
+
+
+\begin{Solution}
+We have
+\begin{align*}
+E_{42}(4)^{-1}&=E_{42}(-4)&E_{21}(2)^{-1}&=E_{21}(-2)&E_4(3)^{-1}&=E_4(1/3)\\
+E_{34}(1)^{-1}&=E_{34}(-1)&E_{13}(2)^{-1}&=E_{13}(-2)& &
+\end{align*}
+We can calculate the product
+\[E_{42}(4)E_{21}(2)E_4(3)E_{34}(1)E_{13}(2)\] by performing row
+operations to the identity (starting with \(R_1\mapsto R_1+2R_3\),
+ending with \(R_4\mapsto R_4+4R_2\)), yielding: \[\ma 1 & 0 & 2 & 0
+\\ 2 & 1 & 0 & 0 \\ 0 & 0 & 1 & 1 \\ 8 & 4 & 0 & 3\mz\] The inverse
+of this product is the product
+\[E_{13}(2)^{-1}E_{34}(1)^{-1}E_4(3)^{-1}E_{21}(2)^{-1}E_{42}(4)^{-1},\]
+which is (again, applying row operations to the identity) \[\ma 1 &
+-8/3 & -2 & 2/3 \\ -2 & 1 & 0 & 0 \\ 0 & 4/3 & 1 & -1/3 \\ 0 & -4/3
+& 0 & 1/3\mz.\]
+
+
+\end{Solution}
+\begin{Solution}
+\begin{itemize}
+\item Each leading index refers to a row and there are \(m\) rows, so
+there are at most \(m\) leading indices.
+\item If \(m<n\) then there must be some free indices because there are
+\(n\) columns and at most \(m\) leading indices. The space of
+solutions to \(Av=0\) has dimension equal to the number of free
+indices providing it's nonempty, so if it's nonempty it contains a
+nonzero solution. It's nonempty because \(0\) is always a
+solution.
+\item If \(A\) is invertible then its reduced echelon form is the
+identity, so \(Av=0\) has a unique solution, which is
+\(v=0\). Conversely, if \(A\) is not invertible then its reduced
+echelon form is not the identity. Since \(m=n\), this means there
+has to be a free index, so again \(Av=0\) has a
+positive-dimensional solution space.
+\item If \(A\) is not invertible then there is a nonzero \(v\) with
+\(Av=0\) (using the previous part of the question). Then
+\(BAv=0\). Therefore \(BA\) is not invertible (using the previous
+part of the question).
+
+
+\end{itemize}
+\end{Solution}
+\newpage
+\end{document}
