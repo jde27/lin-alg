@@ -1,0 +1,361 @@
+\documentclass{article}
+\title{Linear Algebra Worksheet 4}
+\author{Jonny Evans}
+\date{Workshop 4}
+\include{head}
+\begin{document}
+\maketitle
+\setcounter{section}{4}
+
+
+\begin{Exercise}\label{exr:routine1}
+Find the determinants of the following matrices by using the
+inductive formula. \[A=\ma 3 & 2 & 1 \\ 1 & 0 & 7 \\ 0 & 1 &
+0\mz,\quad B=\ma 1 & 2 & 5 & 13 \\ 0 & 1 & 2 & 1 \\ 1 & 0 & 1 & 3
+\\ 1 & 1 & 1 & 1\mz,\quad C=\ma 1 & 1 & 1 & 1 & 1 \\ 0 & 0 & 1 & 0 &
+0 \\ 0 & 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 0 & 1 \\ 1 & 0 & 0 & 0 &
+0\mz.\]
+
+
+\end{Exercise}
+\begin{Exercise}\label{exr:routine3}
+Compute the determinant of the matrix \[A=\ma 1 & t & 1 \\ 2 & 3 & 1
+\\ 1 & 0 & 2\mz.\] For which value of \(t\) does this matrix fail to
+be invertible? For this value of \(t\), find an element of
+\(\ker(A)\).
+
+
+
+
+\end{Exercise}
+\begin{Exercise}\label{exr:routineeval}
+For each matrix below, find its characteristic polynomial, its
+eigenvalues and its eigenvectors.
+\begin{gather*}
+A=\ma 1 & 5 \\ 2 & 4 \mz,\quad
+B=\ma 3 & -2 \\ 1 & 3 \mz,\quad
+C=\ma 0 & i \\ i & 0 \mz\\
+D=\ma 0 & 1 & 0 \\ 0 & 0 & 1 \\ 1 & 0 & 0 \mz,\quad
+E=\ma 1 & 1 & 0 \\ 1 & 0 & 1 \\ 0 & 1 & 1\mz,\quad
+F=\ma 0 & 1 & 0 \\ 1 & 0 & 1 \\ 0 & 1 & 0\mz\\
+G=\ma -1 & -2 & 2 \\ -1 & 1 & 1 \\ -5 & -4 & 6\mz,\quad
+H=\ma -2 & 3 & -3 \\ -6 & 7 & -6 \\ -6 & 6 & -5\mz,\quad
+J=\ma 18 & -5 & -6 \\ 81 & -20 & -18 \\ -22 & 6 & 7\mz
+\end{gather*}
+
+
+\end{Exercise}
+\begin{Exercise}\label{exr:detsum}
+Write down two \(2\)-by-\(2\) matrices \(A,B\) with
+\(\det(A)=\det(B)=1\). Find \(\det(A+B)\). Repeat twice more with
+different matrices. Can you get any value for \(\det(A+B)\)?
+
+
+\end{Exercise}
+\begin{Exercise}
+Suppose that \(A\) has an eigenvector \(v\) with eigenvalue
+\(\lambda\). Show that \(\exp(A)\) has \(v\) as an eigenvector and
+find the eigenvalue.
+
+
+\end{Exercise}
+\begin{Exercise}\label{exr:jacobian}
+The {\em Jacobian} of a differentiable map \(F\colon\RR^n\to\RR^m\)
+is the \(m\)-by-\(n\) matrix \[Jac(F)=\ma \frac{\partial
+F_1}{\partial x_1} & \frac{\partial F_1}{\partial x_2} & \cdots &
+\frac{\partial F_1}{\partial x_{n-1}} & \frac{\partial F_1}{\partial
+x_n} \\ \frac{\partial F_2}{\partial x_1} & \frac{\partial
+F_2}{\partial x_2} & \cdots & \frac{\partial F_2}{\partial x_{n-1}}
+& \frac{\partial F_2}{\partial x_n} \\ \vdots & \vdots & & \vdots &
+\vdots \\ \frac{\partial F_m}{\partial x_1} & \frac{\partial
+F_m}{\partial x_2} & \cdots &\frac{\partial F_m}{\partial x_{n-1}} &
+\frac{\partial F_m}{\partial x_n}\mz,\] where
+\(F(x_1,\ldots,x_n)=\ma
+F_1(x_1,\ldots,x_n)\\ \vdots\\ F_m(x_1,\ldots,x_n)\mz\).
+
+
+Find \(\det(Jac(F))\) in the following examples:
+\begin{enumerate}
+\item \(m=n=2\), \(F(r,\phi)=\ma r\cos\phi \\ r\sin\phi\mz\).
+\item \(m=n=3\), \(F(r,\theta,\phi)=\ma r\sin\theta\cos\phi
+\\ r\sin\theta\sin\phi \\ r\cos\theta\mz\)
+
+
+\end{enumerate}
+{\em If \(m=n\) and \(F\) is a change of coordinates
+\(\RR^n\to\RR^n\) then the determinant of the Jacobian matrix is an
+important quantity: if \(y=F(x)\) then the volume element
+\(dy_1\cdots dy_n\) is equal to \(\det(Jac(F))dx_1\cdots dx_n\). In
+the examples we've just computed the volume element in polar and
+spherical coordinates.}
+
+
+\end{Exercise}
+\begin{Exercise}\label{exr:orthaxis}
+Suppose that \(A\) is an \(n\)-by-\(n\) orthogonal matrix
+(\(AA^T=I\)).
+\begin{enumerate}
+\item Show that \(\det(A)=\pm 1\).
+\item If \(\det(A)=1\), show that \(\det(A-I)=(-1)^n\det(A-I)\). (Hint:
+Use the fact that \(A-I=A(I-A^T)\).)
+\item Deduce that if \(n\) is odd then any orthogonal matrix with
+determinant one has a fixed vector.
+
+
+\end{enumerate}
+\end{Exercise}
+\begin{Exercise}\label{exr:detprod}
+Let \(A\) be an \(n\)-by-\(n\) matrix with characteristic polynomial
+\(\chi_A(t)\); suppose that \(\chi_A(t)\) has \(n\) distinct
+roots. By considering \(\chi_A(0)\), prove that \(\det(A)\) is the
+product of the eigenvalues of \(A\). One of the coefficients in the
+polynomial \(\chi_A(t)\) is equal to minus the sum of the
+eigenvalues of \(A\): which coefficient? {\em (Hint: Recall that if
+a polynomial \(p(t)\) of degree \(n\) has roots
+\(\lambda_1,\ldots,\lambda_n\) and the coefficient of \(t^n\) is
+\(1\) then \(p(t)=(t-\lambda_1)(t-\lambda_2)\cdots(t-\lambda_n)\))}.
+
+
+\end{Exercise}
+\newpage
+\setcounter{section}{3}
+\section{Solutions}
+
+
+\begin{Solution}\label{sol:exr:routine1}
+(a) We start with the matrix \(A=\ma 3 & 2 & 1 \\ 1 & 0 & 7 \\ 0 & 1
+& 0\mz\). Note that the final row only has one nonzero entry, so we
+should expand around that. There is only one term that contributes:
+\[-\det\ma 3 & 1 \\ 1 & 7\mz=-(21-1)=-20.\]
+
+
+(b) We start with the matrix \(B=\ma 1 & 2 & 5 & 13 \\ 0 & 1 & 2 & 1
+\\ 1 & 0 & 1 & 3 \\ 1 & 1 & 1 & 1\mz\). Expanding down the leftmost
+column, we get \[\det(B)=\det\ma 1 & 2 & 1 \\ 0 & 1 & 3 \\ 1 & 1 &
+1\mz-0+\det\ma 2 & 5 & 13 \\ 1 & 2 & 1 \\ 1 & 1 & 1\mz-\det\ma 2 & 5
+& 13 \\ 1 & 2 & 1 \\ 0 & 1 & 3\mz.\] We have
+\begin{align*}
+\det\ma 1 & 2 & 1 \\ 0 & 1 & 3 \\ 1 & 1 & 1\mz&=1(1\times 1-3\times 1)-0+1(2\times 3-1\times 1)\\
+&=3,\\
+\det\ma 2 & 5 & 13 \\ 1 & 2 & 1 \\ 1 & 1 & 1\mz&=2(2\times 1-1\times 1)-5(1\times 1-1\times 1)+13(1\times 1-2\times 1)\\
+&=-11,\\
+\det\ma 2 & 5 & 13 \\ 1 & 2 & 1 \\ 0 & 1 & 3\mz&=2(2\times 3-1\times 1)-(5\times 3-1\times 13)+0\\
+&=8,\\
+\end{align*}
+so \(\det(B)=-16\).
+
+
+(c) We start with the matrix \(C=\ma 1 & 1 & 1 & 1 & 1 \\ 0 & 0 & 1
+& 0 & 0 \\ 0 & 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 0 & 1 \\ 1 & 0 & 0 & 0 &
+0\mz\). Expanding down the second column gives \[\det(C)=-\det\ma 0
+& 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \\ 1 & 0 & 0 & 0\mz.\]
+Expanding this subdeterminant down the first column gives
+\[\det(C)=-\left(-\det\ma 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 &
+1\mz\right)=1. \qedhere\]
+
+
+\end{Solution}
+\begin{Solution}\label{sol:exr:routine3}
+We have \[\det\ma 1 & t & 1 \\ 2 & 3 & 1 \\ 1 & 0 & 2\mz=\det\ma t &
+1 \\ 3 & 1 \mz-0+2\ma 1 & t \\ 2 & 3\mz,\] by expanding along the
+bottom row, which gives \[\det\ma 1 & t & 1 \\ 2 & 3 & 1 \\ 1 & 0 &
+2\mz=3-3t.\] This is zero (i.e. the matrix is not invertible) if and
+only if \(t=1\). If we set \(t=1\), an element of \(\ker(A)\) is
+then a solution to \(Av=0\), that is a vector \(v=\ma x
+\\ y\\ z\mz\) such that \[\ma 0 \\ 0 \\ 0\mz=Av=\ma x+y+z\\ 2x+3y+z
+\\ x+2z\mz.\] These equations imply that \(x=-2z\) and \(y=-x-z=z\),
+so the vector \(\ma -2 \\ 1 \\ 1\mz\) is in (in fact spans) the
+kernel of \(A\) when \(t=1\). \qedhere
+
+
+
+
+
+
+\end{Solution}
+\begin{Solution}\label{sol:exr:routineeval}
+(a) If \(A=\ma 1 & 5 \\ 2 & 4 \mz\) then the characteristic
+polynomial is \[\det\ma 1-t & 5 \\ 2 & 4-t \mz=t^2-5t-6.\] The roots
+are \(\frac{5\pm\sqrt{25+24}}{2}=-1,6\). The corresponding
+eigenvectors are \(\ma 1 \\ -2/5\mz\) and \(\ma 1 \\ 1\mz\). For
+example, you get the first one by solving \[\ma -x \\ -y \mz=\ma 1 &
+5 \\ 2 & 4\mz\ma x \\ y\mz=\ma x+5y \\ 2x+4y\mz,\] which gives
+\(y=-2x/5\).
+
+
+(b) If \(B=\ma 3 & -2 \\ 1 & 3\mz\) then the characteristic
+polynomial is \[\det\ma 3-t & -2 \\ 1 & 3-t\mz=t^2-6t+11.\] The
+roots are \(\frac{6\pm\sqrt{36-44}}{2}=3\pm i\sqrt{2}\). The
+corresponding eigenvectors are \(\ma 1 \\ \pm i\sqrt{2}\mz\). To see
+this, you need to solve \[\ma (3\pm i\sqrt{2})x \\ (3\pm
+i\sqrt{2})y\mz=\ma 3 & -2 \\ 1 & 3\mz\ma x \\ y\mz=\ma 3x-2y
+\\ x+3y\mz,\] which gives \(y=\pm ix/\sqrt{2}\).
+
+
+(c) If \(C=\ma 0 & i \\ i & 0\mz\) then the characteristic
+polynomial is \[\det\ma -t & i \\ i & -t\mz=t^2+1,\] so the roots
+are \(t=\pm i\). The corresponding eigenvectors are \(\ma \pm 1
+\\ 1\mz\).
+
+
+(d) If \(D=\ma 0 & 1 & 0 \\ 0 & 0 & 1 \\ 1 & 0 & 0 \mz\) then we
+have \[\det(D-tI)=\det\ma -t & 1 & 0 \\ 0 & -t & 1 \\ 1 & 0 &
+-t\mz=-t^3+1.\] The solutions of \(t^3=1\) are \(1,\mu,\mu^2\),
+where \(\mu=e^{2\pi i/3}\). The corresponding eigenvectors are:
+\[\ma 1 \\ 1 \\ 1 \mz,\quad\ma 1 \\ \mu \\ \mu^2\mz,\quad\ma 1
+\\ \mu^2 \\ \mu\mz.\] For example, you can find the second one by
+solving \[\ma y\\ z \\x\mz=D\ma x \\ y \\ z\mz=\ma \mu x\\ \mu y
+\\ \mu z\mz,\] which gives \(y=\mu x\) and \(z=\mu^2x\).
+
+
+(e) If \(E=\ma 1 & 1 & 0 \\ 1 & 0 & 1 \\ 1 & 1 & 0 \mz\) then we
+have \[\det(E-tI)=\det\ma 1-t & 1 & 0 \\ 1 & -t & 1 \\ 1 & 1 &
+-t\mz=(1-t)(-t(1-t)-1)-(1-t)=-t^3+2t^2+t-2.\] It is easy to check
+that \(t=1\) is a solution. By long division of polynomials, we get
+that \(-t^3+2t^2+t-2=(t-1)(-t^2+t+2)\), and the roots of
+\(-t^2+t+2=0\) are \(\frac{-1\pm\sqrt{1+8}}{2}=-1,2\). Therefore the
+eigenvalues of \(E\) are \(-1,1,2\). The corresponding eigenvectors
+are \(\ma 1 \\ -2 \\ 1 \mz\), \(\ma -1 \\ 0 \\ 1\mz\) and \(\ma 1
+\\ 1 \\ 1\mz\). For example, to find the first one, we need to solve
+\[\ma x+y \\ x+z \\ y+z\mz=E\ma x \\ y \\ z \mz=\ma -x \\ -y
+\\ -z\mz,\] which means \(y=-2x=-2z\), so \(\ma 1 \\ -2 \\ 1\mz\)
+works.
+
+
+(f) If \(F=\ma 0 & 1 & 0 \\ 1 & 0 & 1 \\ 0 & 1 & 0\mz\) then the
+characteristic polynomial is \[\chi_F(t)=\det(F-tI)=\det\ma -t & 1 &
+0 \\ 1 & -t & 1 \\ 0 & 1 & -t\mz=-t(t^2-1)-(-t)=-t^3+2t.\] This
+factors as \(-t(t^2-2)\) so the eigenvalues are \(0,\pm
+\sqrt{2}\). The eigenvectors are \(\ma 1 \\ 0 \\ -1\mz\), \(\ma 1
+\\ \sqrt{2}\\ 1\mz\), \(\ma 1 \\ -\sqrt{2}\\ 1\mz\). For example,
+the first one comes from solving the equation \[\ma y \\ x+z
+\\ y\mz=F\ma x \\ y\\ z\mz=\ma 0 \\ 0 \\ 0\mz,\] which implies
+\(y=0\) and \(x=-z\).
+
+
+\end{Solution}
+\begin{Solution}\label{sol:exr:ellipsoid}
+If we use the matrix \(A=\ma 2 & -1 & 0 \\ -1 & 2 & -1 \\ 0 & -1 &
+2\mz\) and \(v=\ma x \\ y \\ z\mz\) then \(v^TAv=1\) is our
+ellipsoid. The characteristic polynomial of \(A\) is
+\[\chi_A(t)=\det\ma 2-t & -1 & 0 \\ -1 & 2-t & -1 \\ 0 & -1 &
+2-t\mz=(2-t)((2-t)^2-1)-(2-t)=(2-t)(t^2-4t+2).\] The eigenvalues are
+therefore \(2\), \(2\pm\sqrt{2}\), which are all positive. The
+corresponding eigenvectors are \(u,v,w\) solving \(Au=2u\),
+\(Av=(2+\sqrt{2})v\) and \(Aw=(2-\sqrt{2})w\). For example, if
+\(u=\ma x \\ y \\ z\mz\) then \[2u=\ma 2x \\ 2y \\ 2z\mz=Au=\ma
+2x-y\\ -x+2y-z\\ 2z-y\mz,\] so \(y=0\) and \(x=-z\), so \(u=\ma 1
+\\ 0 \\ -1\mz\) up to scale. Similarly, we find \(v=\ma -1/\sqrt{2}
+\\ 1 \\ -1/\sqrt{2}\mz\) and \(w=\ma 1/\sqrt{2}\\ 1
+\\ 1/\sqrt{2}\mz\). These are then the principal directions and the
+principal radii are
+\(\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2\pm\sqrt{2}}}\).
+
+
+(g) If \(G=\ma -1 & -2 & 2 \\ -1 & 1 & 1 \\ -5 & -4 & 6\mz\) then
+the characteristic polynomial is \[\det\ma -1-t & -2 & 2 \\ -1 & 1-t
+& 1 \\ -5 & -4 & 6-t\mz=-t^3+6t^2-11t+6,\] which has roots
+\(1,2,3\). You can guess that \(1\) is a root, and then find the
+other factors by polynomial long division. The eigenvectors are
+respectively \(\ma 1 \\ 0 \\ 1 \mz\), \(\ma 0 \\ 1 \\ 1\mz\) and
+\(\ma 1 \\ 1 \\ 3\mz\).
+
+
+(h) If \(H=\ma -2 & 3 & -3 \\ -6 & 7 & -6 \\ -6 & 6 & -5\mz\) then
+the characteristic polynomial turns out to be \[-t^3+3t-2,\] which
+has roots \(t=1,2\) (\(1\) is a repeated root). The eigenvector for
+\(2\) is \(\ma 1 \\ 2 \\ 2 \mz\). For the eigenvalue \(1\), we solve
+\[\ma x \\ y \\ z\mz=\ma -2 & 3 & -3 \\ -6 & 7 & -6 \\ -6 & 6 &
+-5\mz\ma x \\ y \\ z\mz=\ma -2x+3y-3z\\ -6x+7y-6z\\ -6x+6y-5z\mz.\]
+All three equations reduce to \(y=x+z\), which cuts out a plane in
+\(\RR^3\). In other words, any vector of the form \(\ma x \\ x+z
+\\ z\mz\) is an eigenvector. We can get away with specifying two
+linearly independent eigenvectors spanning this plane, say \(\ma 1
+\\ 1 \\ 0 \mz\) anda \(\ma 0 \\ 1 \\ 1 \mz\).
+
+
+(j) If \(J=\ma 18 & -5 & -6 \\ 81 & -20 & -18 \\ -22 & 6 & 7 \mz\)
+then the characteristic polynomial turns out to be
+\[-t^3+5t^2-7t+3,\] which has roots \(1,3\) (where \(1\) is
+repeated). The eigenvector for \(3\) is \(\ma -4
+\\ -18\\ 5\mz\). The eigenvector for \(1\) is \(\ma -3 \\ -15
+\\ 4\mz\) (although the eigenvalue is repeated, there is only one
+eigenvector).
+
+
+\end{Solution}
+\begin{Solution}
+There are many possible answers, for example \(A=\ma 1 & 0 \\ 0 &
+1\mz\), \(B=\det\ma 2 & 0 \\ 0 & 1/2\mz\), or \(A=\det\ma 1 & 4 \\ 1
+& 5\mz\) \(B=\det\ma 2 & 1 \\ 5 & 3\mz=1\). These give
+\(\det(A+B)=9/2\) and \(\det(A+B)=-6\) respectively. The point is,
+there is no way to predict \(\det(A+B)\) just from knowing
+\(\det(A)\) and \(\det(B)\). For example, \(\det\ma t & 0 \\ 0 &
+1/t\mz=1\) so if you take \(A=\ma 1 & 0 \\ 0 & 1\mz\) and \(B=\ma t
+& 0 \\ 0 & 1/t\mz\) then you get \(\det(A+B)=2+t+1/t\) and this
+takes on every possible value as \(t\) varies. For example, if you
+want to get \(\det(A+B)=D\) then you pick \(t\) satisfying
+\(2+t+1/t=D\) (which is equivalent to \(t^2+(2-D)t+1=0\) or
+\(t=\frac{2-D\pm\sqrt{D^2-4D}}{2}\)).
+
+
+\end{Solution}
+\begin{Solution}
+If \(Av=\lambda v\) then \(\exp(A)v=\sum_{n\geq
+0}\frac{1}{n!}A^nv=\sum_{n\geq
+0}\frac{1}{n!}\lambda^nv=e^{\lambda}v\) so \(\exp(A)\) has \(v\) as
+an eigenvector with eigenvalue \(e^{\lambda}\).
+
+
+\end{Solution}
+\begin{Solution}
+\begin{enumerate}
+\item The Jacobian matrix is \[\ma \frac{\partial(r\cos\phi)}{\partial
+r} & \frac{\partial(r\cos\phi)}{\partial \phi}
+\\ \frac{\partial(r\sin\phi)}{\partial r} &
+\frac{\partial(r\sin\phi)}{\partial\phi}\mz=\ma \cos\phi &
+-r\sin\phi \\ \sin\phi & r\cos\phi\mz,\] whose determinant is
+\(r\cos^2\phi+r\sin^2\phi=r\). ! The Jacobian matrix is \[\ma
+\sin\theta\cos\phi & r\cos\theta\cos\phi & -r\sin\theta\sin\phi
+\\ \sin\theta\sin\phi & r\cos\theta\sin\phi & r\sin\theta\cos\phi
+\\ \cos\theta & -r\sin\theta & 0\mz,\] whose determinant is (using
+the inductive formula, expanding along the bottom row):
+\[\cos\theta(r^2\cos\theta\sin\theta\cos^2\phi +
+r^2\cos\theta\sin\theta\sin^2\phi) -
+(-r\sin\theta)(r\sin^2\theta\cos^2\phi +
+r\sin^2\theta\sin^2\phi),\] which simplifies to \(r^2\sin\theta\).
+
+
+\end{enumerate}
+\end{Solution}
+\begin{Solution}\label{sol:exr:orthaxis}
+\begin{enumerate}
+\item We have \(1=\det(I)=\det(AA^T)=\det(A)\det(A^T)=\det(A)^2\), so
+\(\det(A)=\pm 1\).
+\item We have
+\begin{align*}
+\det(A-I)&=\det(A(I-A^T))\\
+&=\det(A)\det(I-A^T)\\
+&=\det(A)\det(I-A)\\
+&=\det(A)\det(-I)\det(A-I)\\
+&=(-1)^n\det(A-I),
+\end{align*}
+so if \(n\) is odd then \(\det(A-I)=-\det(A-I)\), which means
+\(\det(A-I)=0\).
+\item Since \(\det(A-I)=0\), \(1\) is a root of the characteristic
+polynomial, so \(A\) has an eigenvector with eigenvalue
+\(1\). Such a vector is a fixed vector. \qedhere
+
+
+\end{enumerate}
+\end{Solution}
+\begin{Solution}
+The characteristic polynomial is both \(\det(A-tI)\) and
+\((t-\lambda_1)\cdots(t-\lambda_n)\) where
+\(\lambda_1,\ldots,\lambda_n\) are the eigenvalues. The constant
+coefficient is therefore both \(\chi_A(0)\) and
+\(\lambda_1\cdots\lambda_n\), so
+\(\chi_A(0)=\lambda_1\cdots\lambda_n\), and the coefficient of
+\(t^{n-1}\) is \(-\lambda_1-\cdots-\lambda_n\).
+\end{Solution}
+\end{document}
